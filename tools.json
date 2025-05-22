@@ -1,0 +1,29 @@
+[
+  {
+    "name": "Surprise Ideas Generator",
+    "url": "https://surpriseideas.vercel.app",
+    "tags": ["Creative", "AI"],
+    "featured": true,
+    "status": "live",
+    "emoji": "🎁",
+    "description": "Get fun, creative ideas for any event. Powered by AI."
+  },
+  {
+    "name": "Productivity Bot",
+    "url": "#",
+    "tags": ["Productivity"],
+    "featured": false,
+    "status": "coming_soon",
+    "emoji": "⚙️",
+    "description": "Automate daily tasks and routines."
+  },
+  {
+    "name": "AI Tools Directory",
+    "url": "#",
+    "tags": ["AI"],
+    "featured": false,
+    "status": "coming_soon",
+    "emoji": "📚",
+    "description": "Discover top AI tools by category and rating."
+  }
+]

@@ -1,28 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Visnec.ai - AI-powered tools to help you thrive." />
-  <title>Visnec.ai</title>
-  <link rel="stylesheet" href="styles/main.css" />
-</head>
-<body>
-  <header>
-    <h1>Welcome to Visnec.ai</h1>
-    <p>Discover our growing suite of AI tools, each designed to boost your creativity and productivity.</p>
-  </header>
-  <main>
-    <section>
-      <h2>Explore Tools</h2>
-      <ul>
-        <li><a href="https://surprise.visnec.ai">Surprise Ideas Generator</a></li>
-        <li><a href="#">More tools coming soon...</a></li>
-      </ul>
-    </section>
-  </main>
-  <footer>
-    <p>&copy; 2025 Visnec Technologies. Powered by <a href="https://visnec.com">Visnec Global</a>.</p>
-  </footer>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Surprise Ideas Generator</title>
+    <script type="module" src="/main.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.1/dist/tailwind.min.css" rel="stylesheet">
+  </head>
+  <body class="bg-gray-50 text-gray-800 min-h-screen flex flex-col">
+    <!-- Header -->
+    <header class="bg-white shadow p-4">
+      <h1 class="text-2xl font-bold text-center">Surprise Ideas for Every Occasion</h1>
+    </header>
+
+    <!-- Main -->
+    <main class="flex-1 flex flex-col items-center justify-start px-4 py-8 space-y-6">
+      <!-- Prompt Input -->
+      <div class="w-full max-w-xl">
+        <input
+          id="prompt"
+          type="text"
+          placeholder="e.g. Birthday, First Date, Apology"
+          class="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring focus:ring-blue-400"
+        />
+        <button
+          id="generateBtn"
+          class="mt-4 w-full bg-blue-600 text-white p-3 rounded-lg hover:bg-blue-700 transition"
+        >
+          Generate Ideas
+        </button>
+      </div>
+
+      <!-- Ideas Output -->
+      <div id="results" class="w-full max-w-xl space-y-4 hidden">
+        <h2 class="text-lg font-semibold">Here are your ideas:</h2>
+        <ul id="ideasList" class="list-disc pl-5 space-y-2 text-gray-700"></ul>
+
+        <!-- Email Section -->
+        <div class="mt-6 space-y-2">
+          <input
+            id="email"
+            type="email"
+            placeholder="Enter your email"
+            class="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring focus:ring-green-400"
+          />
+          <button
+            id="sendBtn"
+            class="w-full bg-green-600 text-white p-3 rounded-lg hover:bg-green-700 transition"
+          >
+            Send to Email
+          </button>
+          <p id="sendStatus" class="text-sm mt-2 text-center"></p>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white shadow p-4 text-center text-sm text-gray-500">
+      <p>
+        Explore more tools at <a href="https://visnec.ai" class="text-blue-500 underline">Visnec.ai</a>
+      </p>
+    </footer>
+  </body>
 </html>

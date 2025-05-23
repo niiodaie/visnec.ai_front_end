@@ -5,27 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Visnec Nexus - Smart Tools Hub</title>
     <link rel="icon" href="favicon.ico" />
-
-    <!-- ✅ Plausible Analytics -->
-    <script defer data-domain="visnec.ai" src="https://plausible.io/js/script.js"></script>
-
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-      .badge {
-        position: absolute;
-        top: 0.5rem;
-        right: 0.5rem;
-        background-color: #22c55e;
-        color: white;
-        font-size: 0.75rem;
-        padding: 0.25rem 0.5rem;
-        border-radius: 9999px;
-      }
-      .pillar-card {
-        @apply p-6 bg-white shadow rounded-lg text-center cursor-pointer hover:bg-blue-50 transition;
-      }
-    </style>
   </head>
   <body class="bg-gray-50 text-gray-800 min-h-screen flex flex-col">
     <!-- Header -->
@@ -48,35 +28,35 @@
       </p>
     </section>
 
-    <!-- Pillar Grid -->
+    <!-- Grid Sections -->
     <section class="px-4 pb-12">
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-4xl mx-auto">
-        <a href="tools.html" class="pillar-card">
-          <h3 class="text-xl font-semibold">Tools</h3>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+        <a href="tools.html" class="block p-4 bg-white shadow rounded hover:bg-blue-50 transition">
+          <h3 class="text-lg font-semibold">Tools</h3>
           <p class="text-sm text-gray-500">Explore all AI-powered tools</p>
         </a>
-        <div class="pillar-card">
-          <h3 class="text-xl font-semibold">Platforms</h3>
+        <div class="block p-4 bg-white shadow rounded opacity-70">
+          <h3 class="text-lg font-semibold">Platforms</h3>
           <p class="text-sm text-gray-500">Coming Soon</p>
         </div>
-        <div class="pillar-card">
-          <h3 class="text-xl font-semibold">Directories</h3>
+        <a href="directories.html" class="block p-4 bg-white shadow rounded hover:bg-blue-50 transition">
+          <h3 class="text-lg font-semibold">Directories</h3>
+          <p class="text-sm text-gray-500">Explore curated directories</p>
+        </a>
+        <div class="block p-4 bg-white shadow rounded opacity-70">
+          <h3 class="text-lg font-semibold">Resources</h3>
           <p class="text-sm text-gray-500">Coming Soon</p>
         </div>
-        <div class="pillar-card">
-          <h3 class="text-xl font-semibold">Resources</h3>
+        <div class="block p-4 bg-white shadow rounded opacity-70">
+          <h3 class="text-lg font-semibold">Community</h3>
           <p class="text-sm text-gray-500">Coming Soon</p>
         </div>
-        <div class="pillar-card">
-          <h3 class="text-xl font-semibold">Community</h3>
+        <div class="block p-4 bg-white shadow rounded opacity-70">
+          <h3 class="text-lg font-semibold">Marketplace</h3>
           <p class="text-sm text-gray-500">Coming Soon</p>
         </div>
-        <div class="pillar-card">
-          <h3 class="text-xl font-semibold">Marketplace</h3>
-          <p class="text-sm text-gray-500">Coming Soon</p>
-        </div>
-        <div class="pillar-card col-span-full">
-          <h3 class="text-xl font-semibold">Insights</h3>
+        <div class="col-span-full block p-4 bg-white shadow rounded opacity-70">
+          <h3 class="text-lg font-semibold">Insights</h3>
           <p class="text-sm text-gray-500">Coming Soon</p>
         </div>
       </div>

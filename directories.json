@@ -1,0 +1,34 @@
+[
+  {
+    "name": "AI Startup Map",
+    "emoji": "🗺️",
+    "description": "A curated map of innovative AI startups worldwide.",
+    "tags": ["Startups", "AI"],
+    "url": "https://example.com/ai-startup-map",
+    "featured": true
+  },
+  {
+    "name": "Top Dev Tools",
+    "emoji": "🧰",
+    "description": "Directory of the most useful development and design tools.",
+    "tags": ["Tools", "Productivity"],
+    "url": "https://example.com/dev-tools",
+    "featured": false
+  },
+  {
+    "name": "Global Talent Network",
+    "emoji": "🌍",
+    "description": "Connect with vetted freelance and remote tech talent.",
+    "tags": ["Talent", "Community"],
+    "url": "https://example.com/talent-network",
+    "featured": true
+  },
+  {
+    "name": "Tech Events Calendar",
+    "emoji": "📆",
+    "description": "Stay updated on top tech events, webinars, and summits.",
+    "tags": ["Events", "Startups"],
+    "url": "https://example.com/tech-events",
+    "featured": false
+  }
+]

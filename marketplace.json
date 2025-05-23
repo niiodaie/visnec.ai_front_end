@@ -1,0 +1,29 @@
+<!-- Grid Sections -->
+<section class="px-4 pb-12">
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+    <a href="tools.html" class="block p-4 bg-white shadow rounded hover:bg-blue-50 transition">
+      <h3 class="text-lg font-semibold">Tools</h3>
+      <p class="text-sm text-gray-500">Explore all AI-powered tools</p>
+    </a>
+    <a href="platforms.html" class="block p-4 bg-white shadow rounded hover:bg-blue-50 transition">
+      <h3 class="text-lg font-semibold">Platforms</h3>
+      <p class="text-sm text-gray-500">Explore our smart platforms</p>
+    </a>
+    <a href="directories.html" class="block p-4 bg-white shadow rounded hover:bg-blue-50 transition">
+      <h3 class="text-lg font-semibold">Directories</h3>
+      <p class="text-sm text-gray-500">Explore curated directories</p>
+    </a>
+    <a href="resources.html" class="block p-4 bg-white shadow rounded hover:bg-blue-50 transition">
+      <h3 class="text-lg font-semibold">Resources</h3>
+      <p class="text-sm text-gray-500">Free templates, guides and assets</p>
+    </a>
+    <a href="community.html" class="block p-4 bg-white shadow rounded hover:bg-blue-50 transition">
+      <h3 class="text-lg font-semibold">Community</h3>
+      <p class="text-sm text-gray-500">Join our creative spaces</p>
+    </a>
+    <a href="marketplace.html" class="block p-4 bg-white shadow rounded hover:bg-blue-50 transition">
+      <h3 class="text-lg font-semibold">Marketplace</h3>
+      <p class="text-sm text-gray-500">Discover digital tools and products</p>
+    </a>
+  </div>
+</section>

@@ -1,74 +1,26 @@
 [
   {
-    "name": "Visnec Training",
-    "emoji": "\ud83c\udf93",
-    "description": "Free IT education in Networking, Cloud, and Security.",
-    "url": "https://training.visnec.io",
-    "tags": [
-      "Education",
-      "IT"
-    ],
-    "status": "coming_soon",
-    "featured": true
-  },
-  {
-    "name": "Whispr",
-    "emoji": "\ud83e\uddd8",
-    "description": "Your AI companion \u2013 Reflector, Motivator, Friend.",
-    "url": "#",
-    "tags": [
-      "AI",
-      "Wellness"
-    ],
-    "status": "coming_soon",
-    "featured": false
-  },
-  {
-    "name": "PlayChacha",
-    "emoji": "\ud83c\udfc6",
-    "description": "Peer-to-peer sports prediction platform.",
-    "url": "#",
-    "tags": [
-      "Sports",
-      "Social"
-    ],
-    "status": "beta",
-    "featured": true
-  },
-  {
-    "name": "SchoolConnect",
-    "emoji": "\ud83c\udfeb",
-    "description": "Global year group networking for schools.",
-    "url": "#",
-    "tags": [
-      "Education",
-      "Social"
-    ],
-    "status": "planning",
-    "featured": false
+    "name": "DarkNotes",
+    "emoji": "🎵",
+    "description": "AI music mentorship with virtual artist guides.",
+    "url": "https://mydarknotes.com",
+    "tags": ["Music", "AI", "Mentorship"],
+    "status": "live"
   },
   {
     "name": "ShopBoost.ai",
-    "emoji": "\ud83d\udecd\ufe0f",
-    "description": "AI-powered e-commerce optimization tools.",
-    "url": "#",
-    "tags": [
-      "E-Commerce",
-      "AI"
-    ],
-    "status": "coming_soon",
-    "featured": false
+    "emoji": "🛒",
+    "description": "Optimize your online store using smart AI tools.",
+    "url": "https://shopboost.ai",
+    "tags": ["eCommerce", "Optimization", "AI"],
+    "status": "live"
   },
   {
-    "name": "HappeningNow",
-    "emoji": "\ud83d\udcf0",
-    "description": "Curated breaking news + AI summaries.",
+    "name": "PlayChacha",
+    "emoji": "⚽",
+    "description": "P2P sports betting platform with community features.",
     "url": "#",
-    "tags": [
-      "News",
-      "AI"
-    ],
-    "status": "planning",
-    "featured": false
+    "tags": ["Sports", "Betting", "Games"],
+    "status": "coming_soon"
   }
 ]

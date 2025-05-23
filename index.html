@@ -4,7 +4,20 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Visnec Nexus – Smart Hub</title>
+  <link rel="icon" href="favicon.ico" />
   <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .badge {
+      position: absolute;
+      top: 0.5rem;
+      right: 0.5rem;
+      background-color: #22c55e;
+      color: white;
+      font-size: 0.75rem;
+      padding: 0.25rem 0.5rem;
+      border-radius: 9999px;
+    }
+  </style>
 </head>
 <body class="bg-gray-50 text-gray-800 min-h-screen flex flex-col">
 
@@ -14,10 +27,17 @@
     <a href="suggest.html" class="text-blue-600 hover:underline text-sm">Suggest a Tool</a>
   </header>
 
+  <!-- Language Toggle -->
+  <div class="text-right pr-4 pt-2">
+    <button id="langToggle" class="text-sm text-blue-600 hover:underline">🌍 Language</button>
+  </div>
+
   <!-- Hero -->
   <section class="text-center py-8 px-4">
-    <h2 class="text-3xl font-bold mb-2">Explore. Build. Thrive.</h2>
-    <p class="text-gray-600 max-w-xl mx-auto">Your all-in-one hub for tools, platforms, and creative innovation.</p>
+    <h2 id="heroTitle" class="text-3xl font-bold mb-2">Explore. Build. Thrive.</h2>
+    <p id="heroSub" class="text-gray-600 max-w-xl mx-auto">
+      Your all-in-one hub for tools, platforms, and creative innovation.
+    </p>
   </section>
 
   <!-- Grid Sections -->
@@ -60,5 +80,36 @@
     <a href="mailto:info@visnec.ai" class="text-blue-500 hover:underline">info@visnec.ai</a>
   </footer>
 
+  <!-- Language Toggle Script -->
+  <script>
+    const langToggle = document.getElementById('langToggle');
+    const userLang = navigator.language || navigator.userLanguage;
+    const title = document.getElementById('heroTitle');
+    const sub = document.getElementById('heroSub');
+    let currentLang = localStorage.getItem('visnec-lang') || (userLang.startsWith('fr') ? 'fr' : 'en');
+
+    function applyLanguage(lang) {
+      localStorage.setItem('visnec-lang', lang);
+      langToggle.innerText = lang === 'fr' ? '🇫🇷 Français' : '🇺🇸 English';
+
+      // Basic UI switch
+      if (lang === 'fr') {
+        document.title = "Visnec Nexus – Outils et Plateformes";
+        title.textContent = "Explorez. Créez. Réussissez.";
+        sub.textContent = "Votre hub tout-en-un pour les outils, les plateformes et la créativité.";
+      } else {
+        document.title = "Visnec Nexus – Smart Hub";
+        title.textContent = "Explore. Build. Thrive.";
+        sub.textContent = "Your all-in-one hub for tools, platforms, and creative innovation.";
+      }
+    }
+
+    langToggle.addEventListener('click', () => {
+      currentLang = currentLang === 'en' ? 'fr' : 'en';
+      applyLanguage(currentLang);
+    });
+
+    applyLanguage(currentLang);
+  </script>
 </body>
 </html>

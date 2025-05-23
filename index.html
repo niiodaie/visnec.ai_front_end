@@ -28,7 +28,7 @@
     <!-- Header -->
     <header class="bg-white shadow p-4 flex justify-between items-center">
       <div class="flex items-center space-x-2">
-        <img src="/logo.png" alt="Visnec Nexus Logo" class="h-8 w-auto bg-white p-1 rounded" />
+        <img src="logo.png" alt="Visnec Nexus Logo" class="h-8 w-auto bg-white p-1 rounded" />
         <span class="text-xl font-bold">Visnec Nexus</span>
       </div>
       <a href="suggest.html" class="text-blue-600 hover:underline text-sm relative">
@@ -45,94 +45,74 @@
       </p>
     </section>
 
-    <!-- Search -->
-    <section class="text-center px-4 mb-6">
-      <input
-        id="searchInput"
-        type="text"
-        placeholder="Search tools..."
-        class="w-full max-w-md border border-gray-300 rounded p-2 text-sm shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
-      />
-    </section>
+    <!-- Pillar Sections -->
+    <main class="px-4 pb-12 space-y-12 max-w-6xl mx-auto">
+      <!-- Tools -->
+      <section>
+        <h3 class="text-2xl font-semibold mb-2">🛠 Tools</h3>
+        <p class="text-gray-600 mb-4">AI-powered utilities designed to save time, spark creativity, and boost productivity.</p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="border border-dashed bg-gray-100 p-6 rounded text-center text-gray-400">Coming Soon: Netlookup</div>
+          <div class="border border-dashed bg-gray-100 p-6 rounded text-center text-gray-400">Coming Soon: ScamScanner</div>
+          <div class="border border-dashed bg-gray-100 p-6 rounded text-center text-gray-400">Coming Soon: Brythylzer</div>
+        </div>
+      </section>
 
-    <!-- Tags -->
-    <section class="flex flex-wrap justify-center gap-2 mb-6">
-      <button class="tag-btn px-3 py-1 bg-gray-200 text-sm rounded-full" onclick="filterTag('All')">All</button>
-      <button class="tag-btn px-3 py-1 bg-blue-100 text-sm rounded-full" onclick="filterTag('Creative')">🎨 Creative</button>
-      <button class="tag-btn px-3 py-1 bg-green-100 text-sm rounded-full" onclick="filterTag('Productivity')">🧠 Productivity</button>
-      <button class="tag-btn px-3 py-1 bg-yellow-100 text-sm rounded-full" onclick="filterTag('AI')">🤖 AI</button>
-    </section>
+      <!-- Platforms -->
+      <section>
+        <h3 class="text-2xl font-semibold mb-2">🧩 Platforms</h3>
+        <p class="text-gray-600 mb-4">Full-scale apps and experiences built to solve complex real-world problems.</p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="border border-dashed bg-gray-100 p-6 rounded text-center text-gray-400">Coming Soon: SchoolConnect</div>
+          <div class="border border-dashed bg-gray-100 p-6 rounded text-center text-gray-400">Coming Soon: PlayChacha</div>
+        </div>
+      </section>
 
-    <!-- Tool Cards -->
-    <section class="px-4 pb-12">
-      <div id="toolsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto"></div>
-    </section>
+      <!-- Directories -->
+      <section>
+        <h3 class="text-2xl font-semibold mb-2">📚 Directories</h3>
+        <p class="text-gray-600 mb-4">Curated collections of tools, services, and recommendations.</p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="border border-dashed bg-gray-100 p-6 rounded text-center text-gray-400">Coming Soon: AI Tools Directory</div>
+          <div class="border border-dashed bg-gray-100 p-6 rounded text-center text-gray-400">Coming Soon: BestProduct-Services</div>
+        </div>
+      </section>
+
+      <!-- Resources -->
+      <section>
+        <h3 class="text-2xl font-semibold mb-2">📂 Resources</h3>
+        <p class="text-gray-600 mb-4">Templates, guides, and downloadable assets to accelerate your workflow.</p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="border border-dashed bg-gray-100 p-6 rounded text-center text-gray-400">Coming Soon: Launch Kit</div>
+        </div>
+      </section>
+
+      <!-- Community -->
+      <section>
+        <h3 class="text-2xl font-semibold mb-2">💬 Community</h3>
+        <p class="text-gray-600 mb-4">Connect with others, share ideas, and collaborate through forums and chats.</p>
+        <div class="border border-dashed bg-gray-100 p-6 rounded text-center text-gray-400">Coming Soon: Community Hub</div>
+      </section>
+
+      <!-- Marketplace -->
+      <section>
+        <h3 class="text-2xl font-semibold mb-2">🛒 Marketplace</h3>
+        <p class="text-gray-600 mb-4">Buy and sell digital tools, templates, prompts, and components.</p>
+        <div class="border border-dashed bg-gray-100 p-6 rounded text-center text-gray-400">Coming Soon: Visnec Market</div>
+      </section>
+
+      <!-- Insights -->
+      <section>
+        <h3 class="text-2xl font-semibold mb-2">📈 Insights</h3>
+        <p class="text-gray-600 mb-4">Get data-driven reports, trends, and AI-curated research to stay ahead.</p>
+        <div class="border border-dashed bg-gray-100 p-6 rounded text-center text-gray-400">Coming Soon: Nexus Analytics</div>
+      </section>
+    </main>
 
     <!-- Footer -->
-    <footer class="text-center text-sm text-gray-500 p-4 border-t">
+    <footer class="text-center text-sm text-gray-500 p-4 border-t mt-12">
       &copy; 2025 <a href="https://visnec.com" target="_blank" class="text-blue-500 hover:underline">Visnec Global</a> ·
       <a href="mailto:info@visnec.ai" class="text-blue-500 hover:underline">info@visnec.ai</a>
     </footer>
-
-    <!-- Script -->
-    <script type="module">
-      const searchInput = document.getElementById('searchInput');
-      const toolsGrid = document.getElementById('toolsGrid');
-
-      let allTools = [];
-
-      async function loadTools() {
-        const res = await fetch('./tools.json');
-        allTools = await res.json();
-        renderTools(allTools);
-      }
-
-      function renderTools(tools) {
-        toolsGrid.innerHTML = '';
-        tools.forEach(tool => {
-          const card = document.createElement('div');
-          card.className = 'tool-card bg-white shadow relative rounded-lg p-6';
-          card.dataset.tags = tool.tags.join(',');
-
-          let badge = tool.featured ? '<div class="badge">New</div>' : '';
-          let tagList = tool.tags.join(', ');
-
-          let content = tool.status === 'live'
-            ? `
-              ${badge}
-              <h3 class="text-lg font-semibold mb-2">${tool.emoji} ${tool.name}</h3>
-              <p class="text-sm text-gray-600 mb-4">${tool.description}</p>
-              <div class="text-xs text-gray-500 mb-2">Tags: ${tagList}</div>
-              <a href="${tool.url}" target="_blank" class="inline-block px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">Launch Tool</a>
-            `
-            : `
-              <p class="text-center text-gray-400">Coming Soon: ${tool.name}</p>
-            `;
-
-          card.innerHTML = content;
-          if (tool.status === 'coming_soon') {
-            card.classList.add("bg-gray-100", "border-dashed", "border-2");
-          }
-
-          toolsGrid.appendChild(card);
-        });
-      }
-
-      searchInput.addEventListener('input', () => {
-        const query = searchInput.value.toLowerCase();
-        const filtered = allTools.filter(t => t.name.toLowerCase().includes(query) || t.tags.join(',').toLowerCase().includes(query));
-        renderTools(filtered);
-      });
-
-      window.filterTag = function(tag) {
-        if (tag === 'All') {
-          renderTools(allTools);
-        } else {
-          renderTools(allTools.filter(t => t.tags.includes(tag)));
-        }
-      };
-
-      loadTools();
-    </script>
   </body>
 </html>

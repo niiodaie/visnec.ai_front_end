@@ -1,0 +1,108 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Visnec Nexus – Smart Tools Hub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" href="favicon.ico" />
+    <style>
+      .card {
+        background: white;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        border-radius: 0.5rem;
+        padding: 1.5rem;
+        transition: box-shadow 0.2s ease;
+      }
+      .card:hover {
+        box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+      }
+    </style>
+  </head>
+  <body class="bg-gray-50 text-gray-800 min-h-screen flex flex-col">
+
+    <!-- Header -->
+    <header class="bg-white shadow p-4 flex justify-between items-center">
+      <div class="text-xl font-bold">Visnec Nexus</div>
+      <div class="flex items-center gap-4">
+        <a href="suggest.html" class="text-blue-600 hover:underline text-sm relative">
+          Suggest a Tool
+          <span class="absolute -top-2 -right-2 bg-green-500 text-white rounded-full px-1.5 text-xs">New</span>
+        </a>
+        <button onclick="toggleLang()" class="text-xs text-blue-700">🌐 <span id="langLabel">Français</span></button>
+      </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="text-center py-8 px-4">
+      <h2 id="heroTitle" class="text-3xl font-bold mb-2">Explore. Create. Succeed.</h2>
+      <p id="heroSub" class="text-gray-600 max-w-xl mx-auto">
+        Your one-stop hub for tools, platforms, and creativity.
+      </p>
+    </section>
+
+    <!-- Sections -->
+    <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-6 pb-10 max-w-6xl mx-auto text-left">
+      <div class="card" onclick="location.href='tools.html'">
+        <h3 class="font-semibold text-lg" data-en="Tools" data-fr="Outils">Tools</h3>
+        <p data-en="Explore all AI-powered tools" data-fr="Explorez tous les outils alimentés par l'IA">Explore all AI-powered tools</p>
+      </div>
+      <div class="card" onclick="location.href='platforms.html'">
+        <h3 class="font-semibold text-lg" data-en="Platforms" data-fr="Plateformes">Platforms</h3>
+        <p data-en="Explore our smart platforms" data-fr="Découvrez nos plateformes intelligentes">Explore our smart platforms</p>
+      </div>
+      <div class="card" onclick="location.href='directories.html'">
+        <h3 class="font-semibold text-lg" data-en="Directories" data-fr="Annuaires">Directories</h3>
+        <p data-en="Explore curated directories" data-fr="Découvrez les annuaires sélectionnés">Explore curated directories</p>
+      </div>
+      <div class="card" onclick="location.href='resources.html'">
+        <h3 class="font-semibold text-lg" data-en="Resources" data-fr="Ressources">Resources</h3>
+        <p data-en="Free templates, guides and assets" data-fr="Modèles gratuits, guides et ressources">Free templates, guides and assets</p>
+      </div>
+      <div class="card" onclick="location.href='community.html'">
+        <h3 class="font-semibold text-lg" data-en="Community" data-fr="Communauté">Community</h3>
+        <p data-en="Join our creative spaces" data-fr="Rejoignez nos espaces créatifs">Join our creative spaces</p>
+      </div>
+      <div class="card" onclick="location.href='marketplace.html'">
+        <h3 class="font-semibold text-lg" data-en="Marketplace" data-fr="Marché">Marketplace</h3>
+        <p data-en="Discover digital tools and products" data-fr="Découvrez des outils et produits numériques">Discover digital tools and products</p>
+      </div>
+      <div class="card col-span-full" onclick="location.href='insights.html'">
+        <h3 class="font-semibold text-lg" data-en="Insights" data-fr="Perspectives">Insights</h3>
+        <p data-en="Read the latest trends and deep dives" data-fr="Lisez les dernières tendances et analyses">Read the latest trends and deep dives</p>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center text-sm text-gray-500 p-4 border-t">
+      © 2025 <a href="https://visnec.com" target="_blank" class="text-blue-500 hover:underline">Visnec Global</a> · 
+      <a href="mailto:info@visnec.ai" class="text-blue-500 hover:underline">info@visnec.ai</a>
+    </footer>
+
+    <!-- Language Switch Script -->
+    <script>
+      function toggleLang() {
+        const lang = document.documentElement.lang === 'fr' ? 'en' : 'fr';
+        document.documentElement.lang = lang;
+
+        document.getElementById('heroTitle').textContent = lang === 'fr'
+          ? 'Explorez. Créez. Réussissez.'
+          : 'Explore. Create. Succeed.';
+
+        document.getElementById('heroSub').textContent = lang === 'fr'
+          ? 'Votre hub tout-en-un pour les outils, les plateformes et la créativité.'
+          : 'Your one-stop hub for tools, platforms, and creativity.';
+
+        document.getElementById('langLabel').textContent = lang === 'fr' ? 'English' : 'Français';
+
+        document.querySelectorAll('[data-en]').forEach(el => {
+          el.textContent = el.getAttribute(`data-${lang}`);
+        });
+      }
+
+      // Initialize default language
+      document.documentElement.lang = 'en';
+    </script>
+  </body>
+</html>

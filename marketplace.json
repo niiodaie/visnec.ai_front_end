@@ -1,29 +1,46 @@
-<!-- Grid Sections -->
-<section class="px-4 pb-12">
-  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-    <a href="tools.html" class="block p-4 bg-white shadow rounded hover:bg-blue-50 transition">
-      <h3 class="text-lg font-semibold">Tools</h3>
-      <p class="text-sm text-gray-500">Explore all AI-powered tools</p>
-    </a>
-    <a href="platforms.html" class="block p-4 bg-white shadow rounded hover:bg-blue-50 transition">
-      <h3 class="text-lg font-semibold">Platforms</h3>
-      <p class="text-sm text-gray-500">Explore our smart platforms</p>
-    </a>
-    <a href="directories.html" class="block p-4 bg-white shadow rounded hover:bg-blue-50 transition">
-      <h3 class="text-lg font-semibold">Directories</h3>
-      <p class="text-sm text-gray-500">Explore curated directories</p>
-    </a>
-    <a href="resources.html" class="block p-4 bg-white shadow rounded hover:bg-blue-50 transition">
-      <h3 class="text-lg font-semibold">Resources</h3>
-      <p class="text-sm text-gray-500">Free templates, guides and assets</p>
-    </a>
-    <a href="community.html" class="block p-4 bg-white shadow rounded hover:bg-blue-50 transition">
-      <h3 class="text-lg font-semibold">Community</h3>
-      <p class="text-sm text-gray-500">Join our creative spaces</p>
-    </a>
-    <a href="marketplace.html" class="block p-4 bg-white shadow rounded hover:bg-blue-50 transition">
-      <h3 class="text-lg font-semibold">Marketplace</h3>
-      <p class="text-sm text-gray-500">Discover digital tools and products</p>
-    </a>
-  </div>
-</section>
+[
+  {
+    "name": "Productivity Notion Kit",
+    "emoji": "\ud83d\udcdd",
+    "description": "Boost your workflow with this prebuilt Notion template for creators.",
+    "url": "https://example.com/notion-kit",
+    "tags": [
+      "Templates",
+      "Productivity"
+    ],
+    "featured": true
+  },
+  {
+    "name": "Startup Pitch Deck Template",
+    "emoji": "\ud83d\udcca",
+    "description": "A clean and effective template for building your startup investor deck.",
+    "url": "https://example.com/pitch-deck",
+    "tags": [
+      "Templates",
+      "Business"
+    ],
+    "featured": false
+  },
+  {
+    "name": "Custom SVG Icon Pack",
+    "emoji": "\ud83c\udfa8",
+    "description": "A set of 100+ clean, responsive icons for UI projects.",
+    "url": "https://example.com/svg-pack",
+    "tags": [
+      "Graphics",
+      "Design"
+    ],
+    "featured": true
+  },
+  {
+    "name": "AI Prompt Engineering Course",
+    "emoji": "\ud83c\udf93",
+    "description": "Learn how to write better prompts and automate workflows using AI.",
+    "url": "https://example.com/ai-course",
+    "tags": [
+      "Courses",
+      "AI"
+    ],
+    "featured": false
+  }
+]

@@ -1,0 +1,38 @@
+[
+  {
+    "name": "Surprise Ideas Generator",
+    "emoji": "\ud83c\udf81",
+    "description": "Get fun, creative ideas for any event. Powered by AI.",
+    "url": "https://surprise.visnec.ai",
+    "tags": [
+      "Creative",
+      "AI"
+    ],
+    "status": "live",
+    "featured": true
+  },
+  {
+    "name": "Netlookup",
+    "emoji": "\ud83c\udf10",
+    "description": "Check DNS, WHOIS, and IP details instantly.",
+    "url": "#",
+    "tags": [
+      "Networking",
+      "Tools"
+    ],
+    "status": "coming_soon",
+    "featured": false
+  },
+  {
+    "name": "ScamScanner",
+    "emoji": "\ud83d\udd0d",
+    "description": "Detect scam links and text with AI.",
+    "url": "#",
+    "tags": [
+      "Security",
+      "AI"
+    ],
+    "status": "coming_soon",
+    "featured": false
+  }
+]

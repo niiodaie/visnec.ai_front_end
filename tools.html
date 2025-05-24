@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Visnec Tools</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body { font-family: Arial, sans-serif; padding: 2rem; background: #f8f9fa; }
+    .tool-card { background: white; padding: 1.5rem; border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); margin-bottom: 1.5rem; }
+    .tool-card h2 { margin: 0 0 0.5rem; }
+    .tool-card p { margin: 0.5rem 0; }
+    .badge { display: inline-block; padding: 0.2rem 0.5rem; background: #eee; border-radius: 4px; font-size: 0.8rem; margin-right: 0.3rem; }
+    .featured { color: green; font-weight: bold; }
+    .coming-soon { color: orange; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <h1>Visnec Tools</h1>
+  <div id="tools-container"></div>
+
+  <script>
+    fetch('/tools/tools.json')
+      .then(res => res.json())
+      .then(tools => {
+        const container = document.getElementById('tools-container');
+        tools.forEach(tool => {
+          const el = document.createElement('div');
+          el.className = 'tool-card';
+          el.innerHTML = `
+            <h2>${tool.emoji || ''} ${tool.name}</h2>
+            <p>${tool.description}</p>
+            <p>${tool.tags.map(tag => `<span class='badge'>${tag}</span>`).join(' ')}</p>
+            <p>
+              <a href="${tool.url}" target="_blank">🔗 Visit Tool</a> |
+              ${tool.featured ? "<span class='featured'>⭐ Featured</span>" : ""}
+              ${tool.status === "coming_soon" ? "<span class='coming-soon'>Coming Soon</span>" : ""}
+            </p>
+          `;
+          container.appendChild(el);
+        });
+      })
+      .catch(err => {
+        document.getElementById('tools-container').innerText = "Failed to load tools.";
+        console.error(err);
+      });
+  </script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+[
+  {
+    "name": "DarkNotes",
+    "description": "AI-powered music mentorship platform",
+    "emoji": "\ud83c\udfb5",
+    "url": "https://mydarknotes.com",
+    "tags": [
+      "Learning",
+      "Creative"
+    ],
+    "featured": true
+  },
+  {
+    "name": "PlayChacha",
+    "description": "Peer-to-peer sports betting platform",
+    "emoji": "\u26bd",
+    "url": "https://playchacha.com",
+    "tags": [
+      "Community",
+      "Entertainment"
+    ],
+    "featured": false
+  },
+  {
+    "name": "ShopBoost.ai",
+    "description": "Automate store optimization and content for e-commerce",
+    "emoji": "\ud83d\udecd\ufe0f",
+    "url": "https://shopboost.ai",
+    "tags": [
+      "Productivity",
+      "E-commerce"
+    ],
+    "featured": true
+  },
+  {
+    "name": "Visnec Training",
+    "description": "Free IT training in networking, security, cloud & more",
+    "emoji": "\ud83c\udf93",
+    "url": "https://visnec.com/training",
+    "tags": [
+      "Learning",
+      "Tech"
+    ],
+    "featured": false
+  },
+  {
+    "name": "SchoolConnect",
+    "description": "Connect school year groups globally",
+    "emoji": "\ud83c\udfeb",
+    "url": "https://schoolconnect.io",
+    "tags": [
+      "Community",
+      "Education"
+    ],
+    "featured": false
+  },
+  {
+    "name": "Surprise Ideas Generator",
+    "description": "Creative ideas for events powered by AI",
+    "emoji": "\ud83c\udf81",
+    "url": "https://visnecai.vercel.app",
+    "tags": [
+      "Creative",
+      "Fun"
+    ],
+    "featured": true
+  },
+  {
+    "name": "TrackMyFlight.live",
+    "description": "Track flights and find deals in real-time",
+    "emoji": "\u2708\ufe0f",
+    "url": "https://trackmyflight.live",
+    "tags": [
+      "Productivity",
+      "Travel"
+    ],
+    "featured": false
+  },
+  {
+    "name": "ScamShield",
+    "description": "Detect scams and protect your devices from spyware",
+    "emoji": "\ud83d\udee1\ufe0f",
+    "url": "https://scamshield.ai",
+    "tags": [
+      "Security",
+      "Productivity"
+    ],
+    "featured": false
+  }
+]

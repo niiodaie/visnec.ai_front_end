@@ -1,0 +1,38 @@
+[
+  {
+    "name": "Surprise Ideas Generator",
+    "emoji": "\ud83c\udf81",
+    "description": "Get fun, creative ideas for any event. Powered by AI.",
+    "tags": [
+      "Creative",
+      "AI"
+    ],
+    "url": "https://surprise.visnec.ai",
+    "status": "live",
+    "featured": true
+  },
+  {
+    "name": "Productivity Bot",
+    "emoji": "\u2699\ufe0f",
+    "description": "Boost your daily workflow with this smart assistant.",
+    "tags": [
+      "Productivity",
+      "AI"
+    ],
+    "url": "#",
+    "status": "coming_soon",
+    "featured": false
+  },
+  {
+    "name": "Text Tools Suite",
+    "emoji": "\u270d\ufe0f",
+    "description": "A bundle of utilities for text manipulation and formatting.",
+    "tags": [
+      "Productivity",
+      "Creative"
+    ],
+    "url": "#",
+    "status": "coming_soon",
+    "featured": false
+  }
+]

@@ -1,0 +1,103 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Visnec Tools</title>
+  <style>
+    body {
+      font-family: "Segoe UI", sans-serif;
+      background-color: #f4f6f9;
+      padding: 2rem;
+      margin: 0;
+    }
+    h1 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+    }
+    .grid {
+      display: grid;
+      gap: 1.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+    .tool {
+      background: #fff;
+      border-radius: 8px;
+      padding: 1.5rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      transition: transform 0.2s ease;
+    }
+    .tool:hover {
+      transform: scale(1.02);
+    }
+    .tool h2 {
+      font-size: 1.2rem;
+      margin: 0 0 0.5rem;
+    }
+    .tool p {
+      font-size: 0.95rem;
+      color: #333;
+    }
+    .tags {
+      margin: 0.5rem 0;
+    }
+    .badge {
+      display: inline-block;
+      background: #eee;
+      color: #444;
+      border-radius: 4px;
+      padding: 0.2rem 0.5rem;
+      font-size: 0.75rem;
+      margin-right: 0.3rem;
+    }
+    .meta {
+      font-size: 0.8rem;
+      margin-top: 0.5rem;
+      color: #666;
+    }
+    .featured {
+      color: green;
+      font-weight: bold;
+    }
+    .coming {
+      color: orange;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1>🚀 Visnec AI Tools</h1>
+  <div class="grid" id="toolList"></div>
+
+  <script>
+    fetch('/tools/tools.json')
+      .then(res => res.json())
+      .then(tools => {
+        const list = document.getElementById('toolList');
+        tools.forEach(tool => {
+          const div = document.createElement('div');
+          div.className = 'tool';
+          div.innerHTML = `
+            <h2>${tool.emoji || ''} ${tool.name}</h2>
+            <p>${tool.description}</p>
+            <div class="tags">
+              ${tool.tags.map(t => `<span class="badge">${t}</span>`).join('')}
+            </div>
+            <div class="meta">
+              <a href="${tool.url}" target="_blank">🔗 Visit Tool</a><br>
+              ${tool.featured ? '<span class="featured">⭐ Featured</span>' : ''}
+              ${tool.status === 'coming_soon' ? '<span class="coming">Coming Soon</span>' : ''}
+            </div>
+          `;
+          list.appendChild(div);
+        });
+      })
+      .catch(err => {
+        document.getElementById('toolList').innerHTML = "⚠️ Failed to load tools.";
+        console.error("Error loading tools.json", err);
+      });
+  </script>
+</body>
+</html>

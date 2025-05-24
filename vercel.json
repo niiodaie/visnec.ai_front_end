@@ -1,5 +1,8 @@
 {
-  "builds": [],
+  "rewrites": [
+    { "source": "/", "destination": "/index.html" }
+  ],
+  "cleanUrls": true,
+  "trailingSlash": false,
   "outputDirectory": "public"
-}
 }

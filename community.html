@@ -28,7 +28,7 @@
   </style>
 </head>
 <body>
-  <a href="index.html" style="display:block;margin:1rem 0;">← Back to Home</a>
+  <a class="hover:text-white hover:drop-shadow-[0_0_8px_#3b82f6] transition-all duration-150" href="index.html" style="display:block;margin:1rem 0;">← Back to Home</a>
   <h1 style="text-align:center;">🚀 VNX Community</h1>
   <div class="filters" id="tagFilters"></div>
   <div class="grid" id="communityList">
@@ -57,7 +57,7 @@
           <p><strong>Status:</strong> 
             <span class="${item.status === 'live' ? 'featured' : 'coming'}">${item.status}</span></p>
           <div class="tags">${(item.tags || []).map(tag => `<span class="badge">${tag}</span>`).join(' ')}</div>
-          <a href="${item.url}" target="_blank">Visit Platform</a>
+          <a class="hover:text-white hover:drop-shadow-[0_0_8px_#3b82f6] transition-all duration-150" href="${item.url}" target="_blank">Visit Platform</a>
         `;
         list.appendChild(div);
       });
@@ -109,5 +109,10 @@
         console.error(err);
       });
   </script>
+
+<footer class="bg-white mt-16 py-10 border-t text-sm text-gray-600 text-center">
+  <p>© 2025 Visnec Nexus • Powered by <a href="https://visnec.com" class="underline text-blue-600 hover:text-white hover:drop-shadow-[0_0_8px_#3b82f6]">Visnec Global</a></p>
+</footer>
+
 </body>
 </html>

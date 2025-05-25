@@ -1,82 +1,105 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Visnec.ai | Home</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <title>Visnec Nexus</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4f6f9;
+      margin: 0;
+      padding: 2rem;
+      text-align: center;
+    }
+    h1 {
+      font-size: 2.5rem;
+      color: #222;
+    }
+    p {
+      font-size: 1.1rem;
+      color: #555;
+      margin-bottom: 2rem;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .card {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+    }
+    .card h2 {
+      margin-top: 0;
+      color: #111;
+      font-size: 1.25rem;
+    }
+    .card p {
+      color: #444;
+      font-size: 0.95rem;
+    }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+    footer {
+      margin-top: 3rem;
+      font-size: 0.85rem;
+      color: #888;
+    }
+    footer a {
+      color: #0070f3;
+      text-decoration: none;
+    }
+  </style>
 </head>
-<body class="bg-gradient-to-r from-blue-50 to-blue-100 text-gray-800">
-  <header class="text-center py-10 bg-blue-700 text-white">
-    <h1 class="text-4xl font-bold">Welcome to Visnec.ai</h1>
-    <p class="text-lg mt-2">Your hub for AI-powered tools, platforms, and directories</p>
-  </header>
+<body>
+  <h1>Explore. Create. Succeed.</h1>
+  <p>Your one-stop hub for tools, platforms, and creativity.</p>
 
-  <main class="max-w-5xl mx-auto p-6 space-y-10">
-    <section>
-      <h2 class="text-2xl font-semibold mb-4">🧰 Tools</h2>
-      <ul class="space-y-2">
-        <li><a href="#" class="text-blue-600 hover:underline">Surprise Ideas Generator</a></li>
-        <li><a href="#" class="text-blue-600 hover:underline">NetLookup</a></li>
-        <li><a href="#" class="text-blue-600 hover:underline">InternetSpeed.io</a></li>
-        <li><a href="#" class="text-gray-500">More tools coming soon...</a></li>
-      </ul>
-    </section>
+  <div class="grid">
+    <a href="tools.html" class="card">
+      <h2>🛠️ Tools</h2>
+      <p>Explore all AI-powered tools</p>
+    </a>
+    <a href="platforms.html" class="card">
+      <h2>🚀 Platforms</h2>
+      <p>Explore our smart platforms</p>
+    </a>
+    <a href="directories.html" class="card">
+      <h2>📁 Directories</h2>
+      <p>Explore curated directories</p>
+    </a>
+    <a href="resources.html" class="card">
+      <h2>📚 Resources</h2>
+      <p>Free templates, guides and assets</p>
+    </a>
+    <a href="community.html" class="card">
+      <h2>👥 Community</h2>
+      <p>Join our creative spaces</p>
+    </a>
+    <a href="marketplace.html" class="card">
+      <h2>🛒 Marketplace</h2>
+      <p>Discover digital tools and products</p>
+    </a>
+    <a href="insights.html" class="card">
+      <h2>🧠 Insights</h2>
+      <p>Read the latest trends and deep dives</p>
+    </a>
+  </div>
 
-    <section>
-      <h2 class="text-2xl font-semibold mb-4">📚 Directories</h2>
-      <ul class="space-y-2">
-        <li><a href="#" class="text-blue-600 hover:underline">AI Tools Directory</a></li>
-        <li><a href="#" class="text-blue-600 hover:underline">Recommendations.com</a></li>
-      </ul>
-    </section>
-
-    <section>
-      <h2 class="text-2xl font-semibold mb-4">🧩 Platforms</h2>
-      <ul class="space-y-2">
-        <li><a href="#" class="text-blue-600 hover:underline">PlayChacha</a></li>
-        <li><a href="#" class="text-blue-600 hover:underline">DarkNotes</a></li>
-        <li><a href="#" class="text-blue-600 hover:underline">HomeConnect</a></li>
-        <li><a href="#" class="text-gray-500">More platforms coming soon...</a></li>
-      </ul>
-    </section>
-
-    <section>
-      <h2 class="text-2xl font-semibold mb-4">🧠 Resources</h2>
-      <ul class="space-y-2">
-        <li><a href="#" class="text-blue-600 hover:underline">Guides</a></li>
-        <li><a href="#" class="text-blue-600 hover:underline">Templates</a></li>
-      </ul>
-    </section>
-  </main>
-
-  <footer class="bg-white mt-10 py-10 border-t">
-    <div class="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-5 gap-4 text-sm text-gray-700 px-4">
-      <div>
-        <h4 class="font-semibold mb-2">Tools</h4>
-        <ul><li><a href="#">Surprise Ideas</a></li><li><a href="#">NetLookup</a></li></ul>
-      </div>
-      <div>
-        <h4 class="font-semibold mb-2">Platforms</h4>
-        <ul><li><a href="#">PlayChacha</a></li><li><a href="#">DarkNotes</a></li></ul>
-      </div>
-      <div>
-        <h4 class="font-semibold mb-2">Directories</h4>
-        <ul><li><a href="#">AI Tools</a></li><li><a href="#">Recommendations</a></li></ul>
-      </div>
-      <div>
-        <h4 class="font-semibold mb-2">Resources</h4>
-        <ul><li><a href="#">Guides</a></li><li><a href="#">Templates</a></li></ul>
-      </div>
-      <div>
-        <h4 class="font-semibold mb-2">More</h4>
-        <ul><li><a href="#">Blog</a></li><li><a href="#">Contact</a></li></ul>
-      </div>
-    </div>
-    <div class="text-center text-xs mt-6 text-gray-500">
-      © 2025 Visnec Nexus • Powered by <a href="https://visnec.com" class="underline">Visnec Global</a>
-    </div>
+  <footer>
+    <p>© 2025 <a href="https://visnec.ai">Visnec Global</a> · <a href="mailto:info@visnec.ai">info@visnec.ai</a></p>
   </footer>
 </body>
 </html>

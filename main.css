@@ -72,3 +72,21 @@ h1 {
   color: orange;
   font-weight: bold;
 }
+
+/* Added glow effects */
+
+a {
+  transition: all 0.2s ease-in-out;
+}
+a:hover {
+  color: white;
+  text-shadow: 0 0 8px #3b82f6;
+}
+
+h2 {
+  transition: all 0.2s ease-in-out;
+}
+h2:hover {
+  color: #2563eb;
+  text-shadow: 0 0 8px #3b82f6;
+}

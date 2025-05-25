@@ -3,78 +3,111 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Visnec.ai | Platforms</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>VNX Platforms</title>
+  <link rel="stylesheet" href="/main.css" />
+  <style>
+    .filters {
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+    .filter-btn {
+      display: inline-block;
+      background: #eee;
+      border: none;
+      border-radius: 20px;
+      padding: 0.4rem 1rem;
+      margin: 0.2rem;
+      cursor: pointer;
+      font-size: 0.9rem;
+    }
+    .filter-btn.active {
+      background-color: #0070f3;
+      color: white;
+    }
+  </style>
 </head>
-<body class="bg-gradient-to-r from-blue-50 to-blue-100 text-gray-800">
-  <header class="text-center py-10 bg-blue-700 text-white">
-    <h1 class="text-4xl font-bold">Visnec Platforms</h1>
-    <p class="text-lg mt-2">Explore our growing ecosystem of AI-powered platforms</p>
-  </header>
+<body>
+  <a href="index.html" style="display:block;margin:1rem 0;">← Back to Home</a>
+  <h1 style="text-align:center;">🚀 VNX Platforms</h1>
+  <div class="filters" id="tagFilters"></div>
+  <div class="grid" id="platformList">
+    <p style="text-align:center;color:gray;">Loading platforms...</p>
+  </div>
 
-  <main class="max-w-5xl mx-auto p-6 space-y-10">
-    <section>
-      <div class="grid md:grid-cols-2 gap-6">
-        <div class="bg-white rounded shadow p-4">
-          <h3 class="text-xl font-semibold">PlayChacha</h3>
-          <p class="text-sm text-gray-600">Peer-to-peer sports betting for global fans.</p>
-        </div>
-        <div class="bg-white rounded shadow p-4">
-          <h3 class="text-xl font-semibold">DarkNotes</h3>
-          <p class="text-sm text-gray-600">AI-powered music mentorship and creation platform.</p>
-        </div>
-        <div class="bg-white rounded shadow p-4">
-          <h3 class="text-xl font-semibold">HomeConnect</h3>
-          <p class="text-sm text-gray-600">Connecting homeowners with trusted professionals across Africa.</p>
-        </div>
-        <div class="bg-white rounded shadow p-4">
-          <h3 class="text-xl font-semibold">SchoolConnect</h3>
-          <p class="text-sm text-gray-600">A network for students and alumni around the world.</p>
-        </div>
-        <div class="bg-white rounded shadow p-4">
-          <h3 class="text-xl font-semibold">HappeningNow.net</h3>
-          <p class="text-sm text-gray-600">AI-curated news platform built on real-time feeds.</p>
-        </div>
-        <div class="bg-white rounded shadow p-4">
-          <h3 class="text-xl font-semibold">VCRM</h3>
-          <p class="text-sm text-gray-600">A lightweight CRM tailored for small businesses and freelancers.</p>
-        </div>
-        <div class="bg-white rounded shadow p-4">
-          <h3 class="text-xl font-semibold">Nexus Pulse</h3>
-          <p class="text-sm text-gray-600">Reddit-style community forum for feedback, votes, and discussions.</p>
-          <span class="inline-block text-xs text-yellow-600 mt-1">Coming soon</span>
-        </div>
-      </div>
-    </section>
-  </main>
+  <script>
+    let allPlatforms = [];
+    let activeTag = '';
 
-  <footer class="bg-white mt-10 py-10 border-t">
-    <div class="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-5 gap-4 text-sm text-gray-700 px-4">
-      <div>
-        <h4 class="font-semibold mb-2">Tools</h4>
-        <ul><li><a href="#">Surprise Ideas</a></li><li><a href="#">NetLookup</a></li></ul>
-      </div>
-      <div>
-        <h4 class="font-semibold mb-2">Platforms</h4>
-        <ul><li><a href="#">PlayChacha</a></li><li><a href="#">DarkNotes</a></li></ul>
-      </div>
-      <div>
-        <h4 class="font-semibold mb-2">Directories</h4>
-        <ul><li><a href="#">AI Tools</a></li><li><a href="#">Recommendations</a></li></ul>
-      </div>
-      <div>
-        <h4 class="font-semibold mb-2">Resources</h4>
-        <ul><li><a href="#">Guides</a></li><li><a href="#">Templates</a></li></ul>
-      </div>
-      <div>
-        <h4 class="font-semibold mb-2">More</h4>
-        <ul><li><a href="#">Blog</a></li><li><a href="#">Contact</a></li></ul>
-      </div>
-    </div>
-    <div class="text-center text-xs mt-6 text-gray-500">
-      © 2025 Visnec Nexus • Powered by <a href="https://visnec.com" class="underline">Visnec Global</a>
-    </div>
-  </footer>
+    function renderPlatforms(platforms) {
+      const list = document.getElementById('platformList');
+      list.innerHTML = '';
+
+      if (platforms.length === 0) {
+        list.innerHTML = '<p style="text-align:center;color:gray;">No platforms match this tag.</p>';
+        return;
+      }
+
+      platforms.forEach(item => {
+        const div = document.createElement('div');
+        div.className = 'tool';
+        div.innerHTML = `
+          <h3>${item.emoji} ${item.name}</h3>
+          <p>${item.description}</p>
+          <p><strong>Status:</strong> 
+            <span class="${item.status === 'live' ? 'featured' : 'coming'}">${item.status}</span></p>
+          <div class="tags">${(item.tags || []).map(tag => `<span class="badge">${tag}</span>`).join(' ')}</div>
+          <a href="${item.url}" target="_blank">Visit Platform</a>
+        `;
+        list.appendChild(div);
+      });
+    }
+
+    function renderFilters(tags) {
+      const container = document.getElementById('tagFilters');
+      container.innerHTML = '';
+
+      const allBtn = document.createElement('button');
+      allBtn.textContent = 'All';
+      allBtn.className = 'filter-btn' + (activeTag === '' ? ' active' : '');
+      allBtn.onclick = () => {
+        activeTag = '';
+        renderPlatforms(allPlatforms);
+        renderFilters(getAllTags(allPlatforms));
+      };
+      container.appendChild(allBtn);
+
+      tags.forEach(tag => {
+        const btn = document.createElement('button');
+        btn.textContent = tag;
+        btn.className = 'filter-btn' + (activeTag === tag ? ' active' : '');
+        btn.onclick = () => {
+          activeTag = tag;
+          renderPlatforms(allPlatforms.filter(t => (t.tags || []).includes(tag)));
+          renderFilters(tags);
+        };
+        container.appendChild(btn);
+      });
+    }
+
+    function getAllTags(items) {
+      const tagSet = new Set();
+      items.forEach(item => (item.tags || []).forEach(tag => tagSet.add(tag)));
+      return Array.from(tagSet).sort();
+    }
+
+    fetch('/platforms.json')
+      .then(res => res.json())
+      .then(data => {
+        allPlatforms = data;
+        renderPlatforms(allPlatforms);
+        renderFilters(getAllTags(allPlatforms));
+      })
+      .catch(err => {
+        document.getElementById('platformList').innerHTML =
+          `<p style="color:red;">⚠️ Failed to load platforms.</p>`;
+        console.error(err);
+      });
+  </script>
 </body>
 </html>

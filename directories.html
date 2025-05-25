@@ -1,118 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Directories – Visnec Nexus</title>
-    <link rel="icon" href="favicon.ico" />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-      .badge {
-        position: absolute;
-        top: 0.5rem;
-        right: 0.5rem;
-        background-color: #22c55e;
-        color: white;
-        font-size: 0.75rem;
-        padding: 0.25rem 0.5rem;
-        border-radius: 9999px;
-      }
-    </style>
-  </head>
-  <body class="bg-gray-50 text-gray-800 min-h-screen flex flex-col">
-    <!-- Header -->
-    <header class="bg-white shadow p-4 flex justify-between items-center">
-      <h1 class="text-xl font-bold">Visnec Nexus – Directories</h1>
-      <a href="suggest.html" class="text-blue-600 hover:underline text-sm relative">
-        Suggest a Directory
-        <span class="absolute -top-2 -right-2 bg-green-500 text-white rounded-full px-1.5 text-xs">New</span>
-      </a>
-    </header>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Visnec Directories</title>
+  <link rel="stylesheet" href="main.css" />
+</head>
+<body>
+  <h1>🚀 Visnec Directories</h1>
+  <div class="grid" id="itemList"></div>
 
-    <!-- Search -->
-    <section class="text-center px-4 mt-6 mb-4">
-      <input
-        id="searchInput"
-        type="text"
-        placeholder="Search directories..."
-        class="w-full max-w-md border border-gray-300 rounded p-2 text-sm shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
-      />
-    </section>
+  <script>
+    fetch('directories.json')
+      .then(res => {
+        if (!res.ok) throw new Error('Failed to fetch directories.json');
+        return res.json();
+      })
+      .then(items => {
+        const list = document.getElementById('itemList');
+        items.forEach(item => {
+          const div = document.createElement('div');
+          div.className = 'card';
 
-    <!-- Tag Filters -->
-    <section class="flex flex-wrap justify-center gap-2 mb-6">
-      <button class="tag-btn px-3 py-1 bg-gray-200 text-sm rounded-full" onclick="filterTag('All')">All</button>
-      <button class="tag-btn px-3 py-1 bg-purple-100 text-sm rounded-full" onclick="filterTag('Startups')">🚀 Startups</button>
-      <button class="tag-btn px-3 py-1 bg-blue-100 text-sm rounded-full" onclick="filterTag('Tools')">🛠️ Tools</button>
-      <button class="tag-btn px-3 py-1 bg-green-100 text-sm rounded-full" onclick="filterTag('Talent')">👥 Talent</button>
-      <button class="tag-btn px-3 py-1 bg-yellow-100 text-sm rounded-full" onclick="filterTag('Events')">📅 Events</button>
-    </section>
-
-    <!-- Directory Grid -->
-    <section class="px-4 pb-12">
-      <div id="directoriesGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto"></div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="text-center text-sm text-gray-500 p-4 border-t">
-      &copy; 2025 <a href="https://visnec.com" target="_blank" class="text-blue-500 hover:underline">Visnec Global</a> ·
-      <a href="mailto:info@visnec.ai" class="text-blue-500 hover:underline">info@visnec.ai</a>
-    </footer>
-
-    <!-- Script -->
-    <script type="module">
-      const searchInput = document.getElementById('searchInput');
-      const directoriesGrid = document.getElementById('directoriesGrid');
-
-      let allDirectories = [];
-
-      async function loadDirectories() {
-        const res = await fetch('./directories.json');
-        allDirectories = await res.json();
-        renderDirectories(allDirectories);
-      }
-
-      function renderDirectories(list) {
-        directoriesGrid.innerHTML = '';
-        list.forEach(entry => {
-          const card = document.createElement('div');
-          card.className = 'bg-white shadow relative rounded-lg p-6';
-          card.dataset.tags = entry.tags.join(',');
-
-          let badge = entry.featured ? '<div class="badge">New</div>' : '';
-          let tagList = entry.tags.join(', ');
-
-          let content = `
-            ${badge}
-            <h3 class="text-lg font-semibold mb-2">${entry.emoji} ${entry.name}</h3>
-            <p class="text-sm text-gray-600 mb-4">${entry.description}</p>
-            <div class="text-xs text-gray-500 mb-2">Tags: ${tagList}</div>
-            <a href="${entry.url}" target="_blank" class="inline-block px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">Explore</a>
+          div.innerHTML = `
+            <h3>${item.emoji} ${item.name}</h3>
+            <p>${item.description}</p>
+            <p><strong>Status:</strong> <span class="${item.status === 'live' ? 'featured' : 'coming'}">${item.status}</span></p>
+            <div class="tags">${item.tags?.map(tag => `<span class="badge">${tag}</span>`).join(' ')}</div>
+            <a href="${item.url}" target="_blank">Visit</a>
           `;
 
-          card.innerHTML = content;
-          directoriesGrid.appendChild(card);
+          list.appendChild(div);
         });
-      }
-
-      searchInput.addEventListener('input', () => {
-        const query = searchInput.value.toLowerCase();
-        const filtered = allDirectories.filter(d =>
-          d.name.toLowerCase().includes(query) ||
-          d.tags.join(',').toLowerCase().includes(query)
-        );
-        renderDirectories(filtered);
+      })
+      .catch(error => {
+        document.getElementById('itemList').innerHTML =
+          `<p style="color: red;">⚠️ Failed to load data.</p>`;
+        console.error('Error loading directories.json:', error);
       });
-
-      window.filterTag = function (tag) {
-        if (tag === 'All') {
-          renderDirectories(allDirectories);
-        } else {
-          renderDirectories(allDirectories.filter(d => d.tags.includes(tag)));
-        }
-      };
-
-      loadDirectories();
-    </script>
-  </body>
+  </script>
+</body>
 </html>

@@ -1,33 +1,35 @@
- [
+[
   {
-    "emoji": "\ud83d\ude80",
-    "name": "VisnecBoost",
-    "description": "AI strategies to grow your online store.",
+    "emoji": "🛍️",
+    "name": "VNX Templates",
+    "description": "Premium templates for web, resumes, and pitch decks.",
     "status": "coming_soon",
     "tags": [
-      "ecommerce",
-      "marketing"
+      "Templates",
+      "Premium"
     ],
     "url": "#"
   },
   {
-    "emoji": "\ud83d\udce6",
-    "name": "Digital Products",
-    "description": "Ready-to-use templates and automation kits.",
+    "emoji": "🎨",
+    "name": "Icon Pack Pro",
+    "description": "A curated icon pack for apps and web projects.",
     "status": "coming_soon",
     "tags": [
-      "Assets",
-      "Business"
+      "Design",
+      "Assets"
     ],
     "url": "#"
   },
   {
-    "emoji": "\ud83d\udcd8",
-    "name": "Course Bundles",
-    "description": "Premium learning bundles for IT & AI.",
+    "emoji": "📦",
+    "name": "Store Boost Kit",
+    "description": "Growth tools and scripts for online stores.",
     "status": "coming_soon",
     "tags": [
-      "Learning"
+      "Ecommerce",
+      "Growth",
+      "Scripts"
     ],
     "url": "#"
   }

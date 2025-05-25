@@ -1,0 +1,56 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Visnec Tools</title>
+
+  <!-- Link to local CSS file -->
+  <link rel="stylesheet" href="main.css" />
+</head>
+<body>
+  <h1>🚀 Visnec AI Tools</h1>
+  <div class="grid" id="toolList"></div>
+
+  <script>
+    fetch('tools.json')
+      .then(res => {
+        if (!res.ok) throw new Error('Failed to fetch tools.json');
+        return res.json();
+      })
+      .then(tools => {
+        const list = document.getElementById('toolList');
+        tools.forEach(tool => {
+          const div = document.createElement('div');
+          div.className = 'card';
+
+          div.innerHTML = `
+            <h3>${tool.emoji} ${tool.name}</h3>
+            <p>${tool.description}</p>
+            <p><strong>Status:</strong> <span class="${tool.status === 'live' ? 'featured' : 'coming'}">${tool.status}</span></p>
+            <div class="tags">${tool.tags?.map(tag => `<span class="badge">${tag}</span>`).join(' ')}</div>
+            <a href="${tool.url}" target="_blank">Visit Tool</a>
+          `;
+
+          list.appendChild(div);
+        });
+      })
+      .catch(error => {
+        document.getElementById('toolList').innerHTML =
+          `<p style="color: red;">⚠️ Failed to load tools.</p>`;
+        console.error('Error loading tools:', error);
+      });
+  </script>
+
+  <footer style="margin-top: 4rem; text-align: center; font-size: 0.9rem; color: #666;">
+    <hr style="margin: 2rem auto; width: 60%;" />
+    <p>© 2025 Visnec Nexus (VNX) · <a href="mailto:info@visnec.ai">info@visnec.ai</a></p>
+    <p>
+      <a href="/privacy.html">Privacy Policy</a> · 
+      <a href="/terms.html">Terms of Use</a> · 
+      <a href="/help-ios.html">📱 iOS Help</a> · 
+      <a href="/help-android.html">🤖 Android Help</a>
+    </p>
+  </footer>
+</body>
+</html>

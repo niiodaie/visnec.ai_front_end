@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>VNX Tools</title>
-  <link rel="stylesheet" href="main.css" />
+  <link rel="stylesheet" href="/main.css" />
   <style>
     .filters {
       text-align: center;
@@ -29,17 +29,17 @@
 </head>
 <body>
   <a href="index.html" style="display:block;margin:1rem 0;">← Back to Home</a>
-  <h1 style="text-align:center;">🚀 Visnec AI Tools</h1>
+  <h1 style="text-align:center;">🚀 VNX Tools</h1>
   <div class="filters" id="tagFilters"></div>
   <div class="grid" id="toolList">
     <p style="text-align:center;color:gray;">Loading tools...</p>
   </div>
 
   <script>
-    let allTools = [];
+    let allPlatforms = [];
     let activeTag = '';
 
-    function renderTools(tools) {
+    function renderPlatforms(tools) {
       const list = document.getElementById('toolList');
       list.innerHTML = '';
 
@@ -48,22 +48,17 @@
         return;
       }
 
-      tools.forEach(tool => {
+      tools.forEach(item => {
         const div = document.createElement('div');
         div.className = 'tool';
-
         div.innerHTML = `
-          <h3>${tool.emoji} ${tool.name}</h3>
-          <p>${tool.description}</p>
+          <h3>${item.emoji} ${item.name}</h3>
+          <p>${item.description}</p>
           <p><strong>Status:</strong> 
-            <span class="${tool.status === 'live' ? 'featured' : 'coming'}">${tool.status}</span>
-          </p>
-          <div class="tags">
-            ${(tool.tags || []).map(tag => `<span class="badge">${tag}</span>`).join(' ')}
-          </div>
-          <a href="${tool.url}" target="_blank">Visit Tool</a>
+            <span class="${item.status === 'live' ? 'featured' : 'coming'}">${item.status}</span></p>
+          <div class="tags">${(item.tags || []).map(tag => `<span class="badge">${tag}</span>`).join(' ')}</div>
+          <a href="${item.url}" target="_blank">Visit Platform</a>
         `;
-
         list.appendChild(div);
       });
     }
@@ -77,8 +72,8 @@
       allBtn.className = 'filter-btn' + (activeTag === '' ? ' active' : '');
       allBtn.onclick = () => {
         activeTag = '';
-        renderTools(allTools);
-        renderFilters(getAllTags(allTools));
+        renderPlatforms(allPlatforms);
+        renderFilters(getAllTags(allPlatforms));
       };
       container.appendChild(allBtn);
 
@@ -88,25 +83,25 @@
         btn.className = 'filter-btn' + (activeTag === tag ? ' active' : '');
         btn.onclick = () => {
           activeTag = tag;
-          renderTools(allTools.filter(t => (t.tags || []).includes(tag)));
+          renderPlatforms(allPlatforms.filter(t => (t.tags || []).includes(tag)));
           renderFilters(tags);
         };
         container.appendChild(btn);
       });
     }
 
-    function getAllTags(tools) {
+    function getAllTags(items) {
       const tagSet = new Set();
-      tools.forEach(tool => (tool.tags || []).forEach(tag => tagSet.add(tag)));
+      items.forEach(item => (item.tags || []).forEach(tag => tagSet.add(tag)));
       return Array.from(tagSet).sort();
     }
 
     fetch('/tools.json')
       .then(res => res.json())
       .then(data => {
-        allTools = data;
-        renderTools(allTools);
-        renderFilters(getAllTags(allTools));
+        allPlatforms = data;
+        renderPlatforms(allPlatforms);
+        renderFilters(getAllTags(allPlatforms));
       })
       .catch(err => {
         document.getElementById('toolList').innerHTML =

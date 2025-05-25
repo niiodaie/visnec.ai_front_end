@@ -1,33 +1,37 @@
 [
   {
-    "emoji": "\ud83e\udde0",
-    "name": "AI Trends",
-    "description": "Weekly breakdown of AI breakthroughs.",
+    "emoji": "📊",
+    "name": "2025 AI Trends",
+    "description": "What’s shaping the future of artificial intelligence?",
     "status": "coming_soon",
     "tags": [
+      "AI",
       "Trends",
-      "AI"
+      "Tech"
     ],
     "url": "#"
   },
   {
-    "emoji": "\ud83d\udcc8",
-    "name": "Monetization Tips",
-    "description": "Earn more from digital products.",
+    "emoji": "📈",
+    "name": "E-commerce Deep Dive",
+    "description": "Data-driven insights on online retail growth.",
     "status": "coming_soon",
     "tags": [
       "Business",
-      "Revenue"
+      "Data",
+      "Growth"
     ],
     "url": "#"
   },
   {
-    "emoji": "\ud83d\uddde\ufe0f",
-    "name": "Nexus Blog",
-    "description": "Latest news, launches, and creator stories.",
+    "emoji": "🎙️",
+    "name": "Creator Economy Report",
+    "description": "How creators are monetizing across platforms.",
     "status": "coming_soon",
     "tags": [
-      "Blog"
+      "Creators",
+      "Monetization",
+      "Platforms"
     ],
     "url": "#"
   }

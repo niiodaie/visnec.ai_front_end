@@ -1,46 +1,34 @@
 [
   {
-    "name": "Visnec Creators Forum",
     "emoji": "\ud83d\udcac",
-    "description": "A discussion board for sharing tips, tools, and collaboration ideas.",
-    "url": "https://community.visnec.ai/forum",
+    "name": "Nexus Pulse",
+    "description": "Reddit-style creative discussions.",
+    "status": "coming_soon",
     "tags": [
-      "Forums",
-      "Support"
+      "Forum",
+      "Community"
     ],
-    "featured": true
+    "url": "#"
   },
   {
-    "name": "Visnec Discord Server",
-    "emoji": "\ud83c\udfa7",
-    "description": "Join our active Discord for live chats, feedback, and updates.",
-    "url": "https://discord.gg/visnec",
+    "emoji": "\ud83e\udde0",
+    "name": "AI Mentorship Forums",
+    "description": "Engage with fellow builders and creators.",
+    "status": "coming_soon",
     "tags": [
-      "Social",
+      "Mentorship",
       "Support"
     ],
-    "featured": true
+    "url": "#"
   },
   {
-    "name": "Creator Meetups",
-    "emoji": "\ud83c\udf89",
-    "description": "Find or host local events and virtual meetups with creators worldwide.",
-    "url": "https://meetup.com/visnec-creative",
+    "emoji": "\ud83c\udfaf",
+    "name": "Tool Requests",
+    "description": "Suggest what we build next.",
+    "status": "coming_soon",
     "tags": [
-      "Events",
-      "Social"
+      "Feedback"
     ],
-    "featured": false
-  },
-  {
-    "name": "Beta Testers Hub",
-    "emoji": "\ud83d\udee0\ufe0f",
-    "description": "Exclusive community for early access and product feedback.",
-    "url": "https://community.visnec.ai/beta",
-    "tags": [
-      "Forums",
-      "Support"
-    ],
-    "featured": false
+    "url": "#"
   }
 ]

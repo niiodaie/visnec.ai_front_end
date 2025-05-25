@@ -1,44 +1,35 @@
 [
   {
-    "emoji": "\ud83c\udf7d\ufe0f",
-    "name": "African Restaurants",
-    "description": "Explore African cuisines around the world.",
+    "emoji": "🍽️",
+    "name": "African Food Map",
+    "description": "Discover top African restaurants by city and cuisine.",
     "status": "coming_soon",
     "tags": [
       "Food",
-      "Culture"
+      "Africa",
+      "Tourism"
     ],
     "url": "#"
   },
   {
-    "emoji": "\ud83e\udd16",
-    "name": "AI Tools Directory",
-    "description": "Curated list of AI tools by category.",
+    "emoji": "🎓",
+    "name": "Global SchoolConnect",
+    "description": "Find and connect with year groups across global schools.",
     "status": "coming_soon",
     "tags": [
-      "AI",
-      "Directory"
+      "Education",
+      "Networking"
     ],
     "url": "#"
   },
   {
-    "emoji": "\ud83d\udcbc",
-    "name": "Freelance Tech Talent",
-    "description": "Find top-rated African freelancers.",
+    "emoji": "💼",
+    "name": "Freelance Hubs",
+    "description": "A growing list of verified freelance and gig platforms.",
     "status": "coming_soon",
     "tags": [
-      "Freelance",
-      "Talent"
-    ],
-    "url": "#"
-  },
-  {
-    "emoji": "\ud83d\udcda",
-    "name": "Certification Prep",
-    "description": "Resources for SAT, IELTS, and more.",
-    "status": "coming_soon",
-    "tags": [
-      "Education"
+      "Freelancing",
+      "Business"
     ],
     "url": "#"
   }

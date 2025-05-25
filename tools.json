@@ -4,10 +4,7 @@
     "name": "Surprise Ideas Generator",
     "description": "Get fun, creative ideas for any event. Powered by AI.",
     "status": "live",
-    "tags": [
-      "Creative",
-      "AI"
-    ],
+    "tags": ["Creative", "AI"],
     "url": "https://surprise.visnec.ai"
   },
   {
@@ -15,10 +12,7 @@
     "name": "Productivity Bot",
     "description": "Boost your daily workflow with this smart assistant.",
     "status": "coming_soon",
-    "tags": [
-      "Productivity",
-      "AI"
-    ],
+    "tags": ["Productivity", "AI"],
     "url": "#"
   },
   {
@@ -26,10 +20,7 @@
     "name": "ScamScanner",
     "description": "Detect scams and malicious spyware using AI.",
     "status": "coming_soon",
-    "tags": [
-      "Security",
-      "AI"
-    ],
+    "tags": ["Security", "AI"],
     "url": "#"
   },
   {
@@ -37,10 +28,7 @@
     "name": "NetLookup",
     "description": "Check domain, IP, and DNS records instantly.",
     "status": "coming_soon",
-    "tags": [
-      "Network",
-      "Tools"
-    ],
+    "tags": ["Network", "Tools"],
     "url": "#"
   },
   {
@@ -48,9 +36,7 @@
     "name": "Phone & IP Lookup",
     "description": "Lookup public details of any phone number or IP.",
     "status": "coming_soon",
-    "tags": [
-      "Utility"
-    ],
+    "tags": ["Utility"],
     "url": "#"
   },
   {
@@ -58,10 +44,7 @@
     "name": "InternetSpeed.io",
     "description": "Test your internet speed and compare ISPs.",
     "status": "coming_soon",
-    "tags": [
-      "Speed",
-      "Network"
-    ],
+    "tags": ["Speed", "Network"],
     "url": "#"
   },
   {
@@ -69,10 +52,7 @@
     "name": "Brythylzer",
     "description": "AI-powered brainstorming and synthesis tool.",
     "status": "coming_soon",
-    "tags": [
-      "AI",
-      "Ideas"
-    ],
+    "tags": ["AI", "Ideas"],
     "url": "#"
   },
   {
@@ -80,10 +60,7 @@
     "name": "AnyCommand",
     "description": "Get explanations for any IT or terminal command.",
     "status": "coming_soon",
-    "tags": [
-      "IT",
-      "Utility"
-    ],
+    "tags": ["IT", "Utility"],
     "url": "#"
   }
 ]

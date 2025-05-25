@@ -2,100 +2,34 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>VNX Tools</title>
-  <link rel="stylesheet" href="main.css" />
-  <style>
-    .filter-bar {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      margin-bottom: 1.5rem;
-      justify-content: center;
-    }
-    .filter-btn {
-      background: #eee;
-      border: none;
-      padding: 0.4rem 0.9rem;
-      border-radius: 20px;
-      cursor: pointer;
-      font-weight: 500;
-    }
-    .filter-btn.active {
-      background: #3b82f6;
-      color: white;
-    }
-    .tool {
-      display: none;
-    }
-    .tool.show {
-      display: block;
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VNX | Tools</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body>
-  <p><a href="index.html">← Back to Home</a></p>
-  <h1>🚀 VNX Tools</h1>
-
-  <div class="filter-bar" id="filterBar"></div>
-  <div class="grid" id="toolList"></div>
-
-  <script>
-    fetch('tools.json')
-      .then(res => res.json())
-      .then(tools => {
-        const tags = new Set();
-        tools.forEach(t => t.tags.forEach(tag => tags.add(tag)));
-
-        const filterBar = document.getElementById('filterBar');
-        const toolList = document.getElementById('toolList');
-
-        // Render tag buttons
-        const allBtn = document.createElement('button');
-        allBtn.textContent = 'All';
-        allBtn.className = 'filter-btn active';
-        allBtn.onclick = () => {
-          document.querySelectorAll('.tool').forEach(div => div.classList.add('show'));
-          document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-          allBtn.classList.add('active');
-        };
-        filterBar.appendChild(allBtn);
-
-        tags.forEach(tag => {
-          const btn = document.createElement('button');
-          btn.textContent = tag;
-          btn.className = 'filter-btn';
-          btn.onclick = () => {
-            document.querySelectorAll('.tool').forEach(div => {
-              const matches = div.dataset.tags.includes(tag);
-              div.classList.toggle('show', matches);
-            });
-            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-          };
-          filterBar.appendChild(btn);
-        });
-
-        // Render tools
-        tools.forEach(tool => {
-          const div = document.createElement('div');
-          div.className = 'tool show';
-          div.dataset.tags = tool.tags.join(',');
-
-          div.innerHTML = `
-            <h2>${tool.emoji} ${tool.name}</h2>
-            <p>${tool.description}</p>
-            <p><strong>Status:</strong> <span class="${tool.status === 'live' ? 'featured' : 'coming'}">${tool.status}</span></p>
-            <div class="tags">${tool.tags.map(tag => `<span class="badge">${tag}</span>`).join(' ')}</div>
-            <p><a href="${tool.url}" target="_blank">Visit Tool</a></p>
-          `;
-          toolList.appendChild(div);
-        });
-      })
-      .catch(err => {
-        document.getElementById('toolList').innerHTML = '<p style="color:red;">⚠️ Failed to load tools.</p>';
-        console.error(err);
-      });
-  </script>
+<body class="bg-gradient-to-r from-blue-50 to-blue-100 text-gray-800">
+  <header class="text-center py-10 bg-blue-700 text-white">
+    <h1 class="text-4xl font-bold">VNX Tools</h1>
+    <p class="text-lg mt-2">Explore powerful AI-driven utilities built for productivity and insights.</p>
+  </header>
+  <main class="max-w-5xl mx-auto p-6 space-y-6">
+    <div class="grid md:grid-cols-2 gap-6"><div class="bg-white rounded shadow p-4"><h3 class="text-lg font-semibold">🎁 Surprise Ideas Generator</h3></div>
+<div class="bg-white rounded shadow p-4"><h3 class="text-lg font-semibold">🌐 NetLookup</h3></div>
+<div class="bg-white rounded shadow p-4"><h3 class="text-lg font-semibold">⚡ InternetSpeed.io</h3></div>
+<div class="bg-white rounded shadow p-4"><h3 class="text-lg font-semibold">🔍 ScamScanner</h3></div>
+<div class="bg-white rounded shadow p-4"><h3 class="text-lg font-semibold">🗓️ The Planner</h3></div>
+<div class="bg-white rounded shadow p-4"><h3 class="text-lg font-semibold">📶 WhatsMyInternetSpeed.net</h3></div></div>
+  </main>
+  <footer class="bg-white mt-10 py-10 border-t">
+    <div class="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-5 gap-4 text-sm text-gray-700 px-4">
+      <div><h4 class="font-semibold mb-2">Tools</h4><ul><li><a href="#">Surprise Ideas</a></li><li><a href="#">NetLookup</a></li></ul></div>
+      <div><h4 class="font-semibold mb-2">Platforms</h4><ul><li><a href="#">PlayChacha</a></li><li><a href="#">DarkNotes</a></li></ul></div>
+      <div><h4 class="font-semibold mb-2">Directories</h4><ul><li><a href="#">AI Tools</a></li><li><a href="#">Recommendations</a></li></ul></div>
+      <div><h4 class="font-semibold mb-2">Resources</h4><ul><li><a href="#">Guides</a></li><li><a href="#">Templates</a></li></ul></div>
+      <div><h4 class="font-semibold mb-2">More</h4><ul><li><a href="#">Blog</a></li><li><a href="#">Contact</a></li></ul></div>
+    </div>
+    <div class="text-center text-xs mt-6 text-gray-500">
+      © 2025 Visnec Nexus • Powered by <a href="https://visnec.com" class="underline">Visnec Global</a>
+    </div>
+  </footer>
 </body>
 </html>

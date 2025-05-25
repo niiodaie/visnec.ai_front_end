@@ -1,90 +1,108 @@
 [
   {
+    "emoji": "\ud83c\udfb6",
     "name": "DarkNotes",
-    "description": "AI-powered music mentorship platform",
-    "emoji": "\ud83c\udfb5",
-    "url": "https://mydarknotes.com",
+    "description": "AI-guided music mentorship.",
+    "status": "coming_soon",
     "tags": [
-      "Learning",
-      "Creative"
+      "Music",
+      "AI"
     ],
-    "featured": true
+    "url": "#"
   },
   {
-    "name": "PlayChacha",
-    "description": "Peer-to-peer sports betting platform",
-    "emoji": "\u26bd",
-    "url": "https://playchacha.com",
-    "tags": [
-      "Community",
-      "Entertainment"
-    ],
-    "featured": false
-  },
-  {
-    "name": "ShopBoost.ai",
-    "description": "Automate store optimization and content for e-commerce",
-    "emoji": "\ud83d\udecd\ufe0f",
-    "url": "https://shopboost.ai",
-    "tags": [
-      "Productivity",
-      "E-commerce"
-    ],
-    "featured": true
-  },
-  {
-    "name": "Visnec Training",
-    "description": "Free IT training in networking, security, cloud & more",
-    "emoji": "\ud83c\udf93",
-    "url": "https://visnec.com/training",
-    "tags": [
-      "Learning",
-      "Tech"
-    ],
-    "featured": false
-  },
-  {
-    "name": "SchoolConnect",
-    "description": "Connect school year groups globally",
     "emoji": "\ud83c\udfeb",
-    "url": "https://schoolconnect.io",
+    "name": "SchoolConnect",
+    "description": "Connect school year groups globally.",
+    "status": "coming_soon",
     "tags": [
-      "Community",
       "Education"
     ],
-    "featured": false
+    "url": "#"
   },
   {
-    "name": "Surprise Ideas Generator",
-    "description": "Creative ideas for events powered by AI",
-    "emoji": "\ud83c\udf81",
-    "url": "https://visnecai.vercel.app",
+    "emoji": "\ud83c\udfe0",
+    "name": "HomeConnect",
+    "description": "Match homeowners with verified pros.",
+    "status": "coming_soon",
     "tags": [
-      "Creative",
-      "Fun"
+      "Home",
+      "Africa"
     ],
-    "featured": true
+    "url": "#"
   },
   {
-    "name": "TrackMyFlight.live",
-    "description": "Track flights and find deals in real-time",
     "emoji": "\u2708\ufe0f",
-    "url": "https://trackmyflight.live",
+    "name": "TrackMyFlight.live",
+    "description": "Track flights and find travel deals.",
+    "status": "coming_soon",
     "tags": [
-      "Productivity",
       "Travel"
     ],
-    "featured": false
+    "url": "#"
   },
   {
-    "name": "ScamShield",
-    "description": "Detect scams and protect your devices from spyware",
-    "emoji": "\ud83d\udee1\ufe0f",
-    "url": "https://scamshield.ai",
+    "emoji": "\u26bd",
+    "name": "PlayChacha",
+    "description": "P2P sports betting with global access.",
+    "status": "coming_soon",
     "tags": [
-      "Security",
-      "Productivity"
+      "Sports",
+      "Betting"
     ],
-    "featured": false
+    "url": "#"
+  },
+  {
+    "emoji": "\ud83d\udcac",
+    "name": "Whispr",
+    "description": "Your AI motivational companion.",
+    "status": "coming_soon",
+    "tags": [
+      "Companion",
+      "Wellness"
+    ],
+    "url": "#"
+  },
+  {
+    "emoji": "\ud83d\udcf0",
+    "name": "HappeningNow.net",
+    "description": "AI-curated breaking news and events.",
+    "status": "coming_soon",
+    "tags": [
+      "News",
+      "AI"
+    ],
+    "url": "#"
+  },
+  {
+    "emoji": "\ud83c\udf1f",
+    "name": "Recommendations.com",
+    "description": "Find and share product recommendations.",
+    "status": "coming_soon",
+    "tags": [
+      "Directory"
+    ],
+    "url": "#"
+  },
+  {
+    "emoji": "\ud83c\udfc6",
+    "name": "Winnerly",
+    "description": "Random winner selector and voting app.",
+    "status": "coming_soon",
+    "tags": [
+      "Community"
+    ],
+    "url": "#"
+  },
+  {
+    "emoji": "\ud83d\udcd8",
+    "name": "ijude.io",
+    "description": "Free IT training platform for self-learners.",
+    "status": "coming_soon",
+    "tags": [
+      "Education",
+      "IT"
+    ],
+    "url": "#"
   }
 ]

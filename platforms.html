@@ -1,114 +1,72 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>VNX Platforms</title>
-  <link rel="stylesheet" href="/main.css" />
-  <style>
-    .tag-filter {
-      margin: 1rem 0;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      justify-content: center;
-    }
-    .tag-button {
-      padding: 0.4rem 0.8rem;
-      border: none;
-      border-radius: 20px;
-      background-color: #eee;
-      cursor: pointer;
-      font-size: 0.9rem;
-    }
-    .tag-button.active {
-      background-color: #0070f3;
-      color: white;
-    }
-    footer {
-      margin-top: 3rem;
-      font-size: 0.85rem;
-      color: #888;
-      text-align: center;
-    }
-    footer a {
-      color: #0070f3;
-      text-decoration: none;
-    }
-  </style>
+  <link rel="stylesheet" href="main.css" />
 </head>
 <body>
-  <a href="/" style="display: block; text-align: center; margin-top: 1rem; font-weight: bold; color: #0070f3;">← Back to Home</a>
-  <h1 style="text-align:center;">🚀 VNX Platforms</h1>
+  <a href="index.html" style="display:block; margin: 1rem 0; color:#0070f3;">← Back to Home</a>
+  <h1>🚀 Visnec AI Platforms</h1>
   <p style="text-align:center;">Explore our smart platforms</p>
 
-  <div class="tag-filter" id="tagFilters"></div>
+  <div id="filterBar" style="text-align:center; margin-bottom: 1rem;"></div>
   <div class="grid" id="platformList"></div>
 
   <footer style="margin-top: 3rem; font-size: 0.85rem; color: #888; text-align: center;">
-  <p>
-    © 2025 <a href="https://visnec.ai" style="color:#0070f3; text-decoration: none;">VNX</a> · 
-    <a href="mailto:info@visnec.ai" style="color:#0070f3; text-decoration: none;">info@visnec.ai</a>
-  </p>
-  <p style="margin-top: 0.5rem;">
-    <a href="/help/ios.html" style="margin-right: 1rem; color: #0070f3;">📱 iOS Help</a>
-    <a href="/help/android.html" style="color: #0070f3;">🤖 Android Help</a>
-  </p>
-</footer>
-
+    <p>
+      © 2025 <a href="https://visnec.ai" style="color:#0070f3; text-decoration: none;">VNX</a> · 
+      <a href="mailto:info@visnec.ai" style="color:#0070f3; text-decoration: none;">info@visnec.ai</a>
+    </p>
+    <p style="margin-top: 0.5rem;">
+      <a href="/help/ios.html" style="margin-right: 1rem; color: #0070f3;">📱 iOS Help</a>
+      <a href="/help/android.html" style="color: #0070f3;">🤖 Android Help</a>
+    </p>
+  </footer>
 
   <script>
-    async function loadPlatforms() {
-      const res = await fetch('/platforms.json');
-      const data = await res.json();
+    fetch('platforms.json')
+      .then(res => res.json())
+      .then(data => {
+        const container = document.getElementById('platformList');
+        const tags = [...new Set(data.flatMap(p => p.tags))];
+        const filterBar = document.getElementById('filterBar');
+        let activeTag = 'All';
 
-      const platformList = document.getElementById('platformList');
-      const tagFilters = document.getElementById('tagFilters');
+        function renderTags() {
+          filterBar.innerHTML = '<button onclick="filterTag(\'All\')" class="tag-button selected">All</button>' +
+            tags.map(tag => `<button onclick="filterTag('${tag}')" class="tag-button">${tag}</button>`).join('');
+        }
 
-      const tags = new Set();
-      data.forEach(p => p.tags?.forEach(tag => tags.add(tag)));
-      const sortedTags = ['All', ...Array.from(tags).sort()];
+        function filterTag(tag) {
+          activeTag = tag;
+          document.querySelectorAll('.tag-button').forEach(btn => {
+            btn.classList.remove('selected');
+            if (btn.textContent === tag) btn.classList.add('selected');
+          });
+          renderPlatforms();
+        }
 
-      sortedTags.forEach(tag => {
-        const btn = document.createElement('button');
-        btn.className = 'tag-button';
-        btn.textContent = tag;
-        if (tag === 'All') btn.classList.add('active');
-        btn.onclick = () => {
-          document.querySelectorAll('.tag-button').forEach(b => b.classList.remove('active'));
-          btn.classList.add('active');
-          renderPlatforms(tag);
-        };
-        tagFilters.appendChild(btn);
+        function renderPlatforms() {
+          const filtered = activeTag === 'All' ? data : data.filter(p => p.tags.includes(activeTag));
+          container.innerHTML = filtered.map(p => `
+            <div class="tool">
+              <h3>${p.emoji} ${p.name}</h3>
+              <p>${p.description}</p>
+              <p><strong>Status:</strong> <span class="${p.status === 'live' ? 'featured' : 'coming'}">${p.status}</span></p>
+              <div class="tags">${p.tags.map(tag => `<span class="badge">${tag}</span>`).join(' ')}</div>
+              <a href="${p.url}" target="_blank">Visit Platform</a>
+            </div>
+          `).join('');
+        }
+
+        renderTags();
+        renderPlatforms();
+      })
+      .catch(() => {
+        document.getElementById('platformList').innerHTML = `<p style="color: red;">⚠️ Failed to load platforms.</p>`;
       });
-
-      function renderPlatforms(activeTag) {
-        platformList.innerHTML = '';
-        data.forEach(p => {
-          if (activeTag !== 'All' && !(p.tags || []).includes(activeTag)) return;
-          const div = document.createElement('div');
-          div.className = 'tool';
-          div.innerHTML = `
-            <h3>${p.emoji} ${p.name}</h3>
-            <p>${p.description}</p>
-            <p><strong>Status:</strong> <span class="${p.status === 'live' ? 'featured' : 'coming'}">${p.status}</span></p>
-            <div class="tags">${(p.tags || []).map(tag => `<span class="badge">${tag}</span>`).join(' ')}</div>
-            <a href="${p.url}" target="_blank">Visit Platform</a>
-          `;
-          platformList.appendChild(div);
-        });
-      }
-
-      renderPlatforms('All');
-    }
-
-    loadPlatforms().catch(err => {
-      document.getElementById('platformList').innerHTML = '<p style="color:red;">⚠️ Failed to load platforms.</p>';
-      console.error(err);
-    });
   </script>
 </body>
 </html>
-
-w

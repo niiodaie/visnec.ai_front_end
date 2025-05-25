@@ -1,34 +1,36 @@
 [
   {
-    "emoji": "\ud83d\udcc4",
-    "name": "Pitch Deck Templates",
-    "description": "Investor-ready pitch decks you can copy.",
-    "status": "coming_soon",
+    "emoji": "📄",
+    "name": "Resume Template Pack",
+    "description": "Downloadable resume templates for IT professionals.",
+    "status": "live",
     "tags": [
       "Templates",
-      "Startup"
+      "Career",
+      "Download"
     ],
     "url": "#"
   },
   {
-    "emoji": "\ud83e\uddf0",
-    "name": "Startup Kits",
-    "description": "Essential docs and tools for launching ideas.",
+    "emoji": "🧰",
+    "name": "Starter UI Kit",
+    "description": "A free design toolkit for web projects.",
     "status": "coming_soon",
     "tags": [
-      "Business",
-      "Tools"
+      "Design",
+      "Frontend"
     ],
     "url": "#"
   },
   {
-    "emoji": "\ud83d\udcdd",
-    "name": "Proposal Scripts",
-    "description": "Copyable email and pitch templates.",
+    "emoji": "📘",
+    "name": "Cloud Cheat Sheet",
+    "description": "Quick reference guide for AWS, Azure, and GCP.",
     "status": "coming_soon",
     "tags": [
-      "Sales",
-      "Docs"
+      "Cloud",
+      "IT",
+      "Reference"
     ],
     "url": "#"
   }

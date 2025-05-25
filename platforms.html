@@ -1,72 +1,51 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>VNX Platforms</title>
-  <link rel="stylesheet" href="main.css" />
-</head>
-<body>
-  <a href="index.html" style="display:block; margin: 1rem 0; color:#0070f3;">← Back to Home</a>
-  <h1>🚀 Visnec AI Platforms</h1>
-  <p style="text-align:center;">Explore our smart platforms</p>
-
-  <div id="filterBar" style="text-align:center; margin-bottom: 1rem;"></div>
-  <div class="grid" id="platformList"></div>
-
-  <footer style="margin-top: 3rem; font-size: 0.85rem; color: #888; text-align: center;">
-    <p>
-      © 2025 <a href="https://visnec.ai" style="color:#0070f3; text-decoration: none;">VNX</a> · 
-      <a href="mailto:info@visnec.ai" style="color:#0070f3; text-decoration: none;">info@visnec.ai</a>
-    </p>
-    <p style="margin-top: 0.5rem;">
-      <a href="/help/ios.html" style="margin-right: 1rem; color: #0070f3;">📱 iOS Help</a>
-      <a href="/help/android.html" style="color: #0070f3;">🤖 Android Help</a>
-    </p>
-  </footer>
-
-  <script>
-    fetch('platforms.json')
-      .then(res => res.json())
-      .then(data => {
-        const container = document.getElementById('platformList');
-        const tags = [...new Set(data.flatMap(p => p.tags))];
-        const filterBar = document.getElementById('filterBar');
-        let activeTag = 'All';
-
-        function renderTags() {
-          filterBar.innerHTML = '<button onclick="filterTag(\'All\')" class="tag-button selected">All</button>' +
-            tags.map(tag => `<button onclick="filterTag('${tag}')" class="tag-button">${tag}</button>`).join('');
-        }
-
-        function filterTag(tag) {
-          activeTag = tag;
-          document.querySelectorAll('.tag-button').forEach(btn => {
-            btn.classList.remove('selected');
-            if (btn.textContent === tag) btn.classList.add('selected');
-          });
-          renderPlatforms();
-        }
-
-        function renderPlatforms() {
-          const filtered = activeTag === 'All' ? data : data.filter(p => p.tags.includes(activeTag));
-          container.innerHTML = filtered.map(p => `
-            <div class="tool">
-              <h3>${p.emoji} ${p.name}</h3>
-              <p>${p.description}</p>
-              <p><strong>Status:</strong> <span class="${p.status === 'live' ? 'featured' : 'coming'}">${p.status}</span></p>
-              <div class="tags">${p.tags.map(tag => `<span class="badge">${tag}</span>`).join(' ')}</div>
-              <a href="${p.url}" target="_blank">Visit Platform</a>
-            </div>
-          `).join('');
-        }
-
-        renderTags();
-        renderPlatforms();
-      })
-      .catch(() => {
-        document.getElementById('platformList').innerHTML = `<p style="color: red;">⚠️ Failed to load platforms.</p>`;
-      });
-  </script>
-</body>
-</html>
+<footer>
+  <div class="footer-container">
+    <div class="footer-column">
+      <h4>Tools</h4>
+      <ul>
+        <li><a href="#">Surprise Ideas</a></li>
+        <li><a href="#">NetLookup</a></li>
+        <!-- etc -->
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h4>Platforms</h4>
+      <ul>
+        <li><a href="#">PlayChacha</a></li>
+        <li><a href="#">DarkNotes</a></li>
+        <li><a href="#">HomeConnect</a></li>
+        <!-- etc -->
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h4>Directories</h4>
+      <ul>
+        <li><a href="#">AI Tools Directory</a></li>
+        <li><a href="#">Recommendations.com</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h4>Resources</h4>
+      <ul>
+        <li><a href="#">Guides</a></li>
+        <li><a href="#">Templates</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h4>More</h4>
+      <ul>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">Privacy</a></li>
+        <li><a href="#">Terms</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 Visnec Nexus • Powered by <a href="https://visnec.com" target="_blank">Visnec Global</a></p>
+    <div class="platform-icons">
+      <a href="#"><img src="ios-icon.png" alt="iOS Help" /></a>
+      <a href="#"><img src="android-icon.png" alt="Android Help" /></a>
+    </div>
+  </div>
+</footer>

@@ -1,90 +1,66 @@
 [
   {
-    "emoji": "\ud83c\udf81",
+    "emoji": "🎁",
     "name": "Surprise Ideas Generator",
     "description": "Get fun, creative ideas for any event. Powered by AI.",
     "status": "live",
-    "tags": [
-      "Creative",
-      "AI"
-    ],
+    "tags": ["Creative", "AI"],
     "url": "https://surprise.visnec.ai"
   },
   {
-    "emoji": "\u2699\ufe0f",
+    "emoji": "⚙️",
     "name": "Productivity Bot",
     "description": "Boost your daily workflow with this smart assistant.",
     "status": "coming_soon",
-    "tags": [
-      "Productivity",
-      "AI"
-    ],
+    "tags": ["Productivity", "AI"],
     "url": "#"
   },
   {
-    "emoji": "\ud83d\udee1\ufe0f",
+    "emoji": "🛡️",
     "name": "ScamScanner",
     "description": "Detect scams and malicious spyware using AI.",
     "status": "coming_soon",
-    "tags": [
-      "Security",
-      "AI"
-    ],
+    "tags": ["Security", "AI"],
     "url": "#"
   },
   {
-    "emoji": "\ud83c\udf10",
-    "name": "NetLookup",
+    "emoji": "🔍",
+    "name": "Netlookup",
     "description": "Check domain, IP, and DNS records instantly.",
     "status": "coming_soon",
-    "tags": [
-      "Network",
-      "Tools"
-    ],
+    "tags": ["Network", "Tools"],
     "url": "#"
   },
   {
-    "emoji": "\ud83d\udcf1",
+    "emoji": "📱",
     "name": "Phone & IP Lookup",
     "description": "Lookup public details of any phone number or IP.",
     "status": "coming_soon",
-    "tags": [
-      "Utility"
-    ],
+    "tags": ["Utility"],
     "url": "#"
   },
   {
-    "emoji": "\ud83d\udcf6",
+    "emoji": "📶",
     "name": "InternetSpeed.io",
     "description": "Test your internet speed and compare ISPs.",
     "status": "coming_soon",
-    "tags": [
-      "Speed",
-      "Network"
-    ],
+    "tags": ["Network", "Speed"],
     "url": "#"
   },
   {
-    "emoji": "\ud83e\uddea",
-    "name": "Brythylzer",
-    "description": "AI-powered brainstorming and synthesis tool.",
+    "emoji": "🛍️",
+    "name": "VisnecBoost",
+    "description": "Get personalized strategies to boost your online store sales.",
     "status": "coming_soon",
-    "tags": [
-      "AI",
-      "Ideas"
-    ],
+    "tags": ["E-commerce", "AI", "Marketing"],
     "url": "#"
   },
   {
-    "emoji": "\ud83d\udcbb",
-    "name": "AnyCommand",
-    "description": "Get explanations for any IT or terminal command.",
+    "emoji": "🧰",
+    "name": "Text Tools Suite",
+    "description": "A bundle of utilities for text manipulation and formatting.",
     "status": "coming_soon",
-    "tags": [
-      "IT",
-      "Utility"
-    ],
+    "tags": ["Productivity", "Creative"],
     "url": "#"
   }
 ]
-h

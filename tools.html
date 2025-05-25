@@ -1,40 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>VNX Tools</title>
-  
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="VNX is your all-in-one hub for AI tools, platforms, directories, and digital innovation." />
-  <meta name="keywords" content="AI tools, digital platform, tech hub, VNX, visnec, directories, productivity tools, marketplace" />
-  <meta name="author" content="VNX - Visnec Nexus" />
-  <meta property="og:title" content="VNX | Explore. Create. Succeed." />
-  <meta property="og:description" content="Discover AI tools, platforms, and resources at Visnec Nexus (VNX)." />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://visnec.ai/og-image.png" />
-  <meta property="og:url" content="https://visnec.ai/" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="VNX | Explore. Create. Succeed." />
-  <meta name="twitter:description" content="Explore free AI tools, platforms, and directories designed to help you grow." />
-
-  
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXX"
-     crossorigin="anonymous"></script>
-
+  <title>VNX</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  
-<style>
-  body {
-    background: linear-gradient(to bottom, #e0f2ff 0%, #f8fbff 100%);
-    background-image: url('https://www.transparenttextures.com/patterns/clouds.png');
-    background-repeat: repeat;
-    background-size: cover;
-  }
-</style>
-
 </head>
-<body class="text-gray-800">
-  
+<body class="bg-gradient-to-r from-blue-50 to-blue-100 text-gray-800">
+
 <header class="text-center py-10 bg-gradient-to-r from-blue-700 to-blue-800 text-white">
   <div class="flex justify-center items-center space-x-4">
     <img src="logo.png" alt="VNX Logo" class="h-10 w-auto" />
@@ -43,68 +16,121 @@
   <p class="text-lg mt-2">Explore. Create. Succeed.</p>
 </header>
 
-  <main class="max-w-6xl mx-auto p-6">
-    
-<h2 class="text-2xl font-bold mb-4">Featured Tools</h2>
 
-<div class="space-y-8">
-  <!-- Surprise Ideas -->
-  <div class="bg-white p-6 rounded shadow">
-    <h3 class="text-xl font-semibold mb-2">🎁 Surprise Ideas Generator</h3>
-    <p class="text-sm text-gray-700 mb-2">Get AI-generated gift and surprise ideas for any occasion.</p>
-    <a href="https://canva.7eer.net/vnx" target="_blank" class="text-blue-600 underline">Try with Canva Affiliate</a>
+<main class="max-w-6xl mx-auto p-6">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>VNX Tools</title>
+  <link rel="stylesheet" href="/main.css" />
+  <style>
+    .filters {
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+    .filter-btn {
+      display: inline-block;
+      background: #eee;
+      border: none;
+      border-radius: 20px;
+      padding: 0.4rem 1rem;
+      margin: 0.2rem;
+      cursor: pointer;
+      font-size: 0.9rem;
+    }
+    .filter-btn.active {
+      background-color: #0070f3;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <a class="hover:text-white hover:drop-shadow-[0_0_8px_#3b82f6] transition-all duration-150" href="index.html" style="display:block;margin:1rem 0;">← Back to Home</a>
+  <h1 style="text-align:center;">🚀 VNX Tools</h1>
+  <div class="filters" id="tagFilters"></div>
+  <div class="grid" id="toolList">
+    <p style="text-align:center;color:gray;">Loading tools...</p>
   </div>
 
-  <!-- Ad Block -->
-  <div class="text-center my-6">
-    <ins class="adsbygoogle"
-      style="display:block"
-      data-ad-client="ca-pub-XXXXXXX"
-      data-ad-slot="1234567890"
-      data-ad-format="auto"
-      data-full-width-responsive="true"></ins>
-    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-  </div>
+  <script>
+    let allPlatforms = [];
+    let activeTag = '';
 
-  <!-- NetLookup -->
-  <div class="bg-white p-6 rounded shadow">
-    <h3 class="text-xl font-semibold mb-2">🌐 NetLookup</h3>
-    <p class="text-sm text-gray-700 mb-2">Lookup IP, DNS, and WHOIS data in seconds.</p>
-    <a href="https://nordvpn.com/?ref=vnx" target="_blank" class="text-blue-600 underline">Secure your network with NordVPN</a>
-  </div>
+    function renderPlatforms(tools) {
+      const list = document.getElementById('toolList');
+      list.innerHTML = '';
 
-  <!-- InternetSpeed -->
-  <div class="bg-white p-6 rounded shadow">
-    <h3 class="text-xl font-semibold mb-2">⚡ InternetSpeed.io</h3>
-    <p class="text-sm text-gray-700 mb-2">Test your internet speed and compare ISPs.</p>
-    <a href="https://namecheap.pxf.io/vnx" target="_blank" class="text-blue-600 underline">Try with Namecheap Hosting</a>
-  </div>
+      if (tools.length === 0) {
+        list.innerHTML = '<p style="text-align:center;color:gray;">No tools match this tag.</p>';
+        return;
+      }
 
-  <!-- Recommendations -->
-  <div class="bg-white p-6 rounded shadow">
-    <h3 class="text-xl font-semibold mb-2">🔍 Recommendations.com</h3>
-    <p class="text-sm text-gray-700 mb-2">Explore trusted product and service picks.</p>
-    <a href="https://amazon.com/?tag=vnx123" target="_blank" class="text-blue-600 underline">Shop via Amazon</a>
-  </div>
+      tools.forEach(item => {
+        const div = document.createElement('div');
+        div.className = 'tool';
+        div.innerHTML = `
+          <h3>${item.emoji} ${item.name}</h3>
+          <p>${item.description}</p>
+          <p><strong>Status:</strong> 
+            <span class="${item.status === 'live' ? 'featured' : 'coming'}">${item.status}</span></p>
+          <div class="tags">${(item.tags || []).map(tag => `<span class="badge">${tag}</span>`).join(' ')}</div>
+          <a class="hover:text-white hover:drop-shadow-[0_0_8px_#3b82f6] transition-all duration-150" href="${item.url}" target="_blank">Visit Platform</a>
+        `;
+        list.appendChild(div);
+      });
+    }
 
-  <!-- ShopBoost.ai -->
-  <div class="bg-white p-6 rounded shadow">
-    <h3 class="text-xl font-semibold mb-2">🛍️ ShopBoost.ai</h3>
-    <p class="text-sm text-gray-700 mb-2">Optimize your online store with AI insights.</p>
-    <a href="https://partners.shopify.com/vnx" target="_blank" class="text-blue-600 underline">Launch with Shopify</a>
-  </div>
-</div>
+    function renderFilters(tags) {
+      const container = document.getElementById('tagFilters');
+      container.innerHTML = '';
 
-  </main>
-  
-<div class="flex justify-center space-x-4 text-blue-600 text-xl mt-4">
-  <a href="https://twitter.com" title="Twitter" target="_blank">🐦</a>
-  <a href="https://linkedin.com" title="LinkedIn" target="_blank">💼</a>
-  <a href="https://instagram.com" title="Instagram" target="_blank">📸</a>
-  <a href="https://youtube.com" title="YouTube" target="_blank">▶️</a>
-</div>
+      const allBtn = document.createElement('button');
+      allBtn.textContent = 'All';
+      allBtn.className = 'filter-btn' + (activeTag === '' ? ' active' : '');
+      allBtn.onclick = () => {
+        activeTag = '';
+        renderPlatforms(allPlatforms);
+        renderFilters(getAllTags(allPlatforms));
+      };
+      container.appendChild(allBtn);
 
-  
+      tags.forEach(tag => {
+        const btn = document.createElement('button');
+        btn.textContent = tag;
+        btn.className = 'filter-btn' + (activeTag === tag ? ' active' : '');
+        btn.onclick = () => {
+          activeTag = tag;
+          renderPlatforms(allPlatforms.filter(t => (t.tags || []).includes(tag)));
+          renderFilters(tags);
+        };
+        container.appendChild(btn);
+      });
+    }
+
+    function getAllTags(items) {
+      const tagSet = new Set();
+      items.forEach(item => (item.tags || []).forEach(tag => tagSet.add(tag)));
+      return Array.from(tagSet).sort();
+    }
+
+    fetch('/tools.json')
+      .then(res => res.json())
+      .then(data => {
+        allPlatforms = data;
+        renderPlatforms(allPlatforms);
+        renderFilters(getAllTags(allPlatforms));
+      })
+      .catch(err => {
+        document.getElementById('toolList').innerHTML =
+          `<p style="color:red;">⚠️ Failed to load tools.</p>`;
+        console.error(err);
+      });
+  </script>
+</main>
+
+
 <footer class="bg-white mt-16 py-10 border-t text-sm text-gray-600 text-center">
   <p>
     © 2025 <strong>VNX</strong> • Powered by

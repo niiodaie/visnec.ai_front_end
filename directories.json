@@ -1,34 +1,45 @@
 [
   {
-    "name": "AI Startup Map",
-    "emoji": "🗺️",
-    "description": "A curated map of innovative AI startups worldwide.",
-    "tags": ["Startups", "AI"],
-    "url": "https://example.com/ai-startup-map",
-    "featured": true
+    "emoji": "\ud83c\udf7d\ufe0f",
+    "name": "African Restaurants",
+    "description": "Explore African cuisines around the world.",
+    "status": "coming_soon",
+    "tags": [
+      "Food",
+      "Culture"
+    ],
+    "url": "#"
   },
   {
-    "name": "Top Dev Tools",
-    "emoji": "🧰",
-    "description": "Directory of the most useful development and design tools.",
-    "tags": ["Tools", "Productivity"],
-    "url": "https://example.com/dev-tools",
-    "featured": false
+    "emoji": "\ud83e\udd16",
+    "name": "AI Tools Directory",
+    "description": "Curated list of AI tools by category.",
+    "status": "coming_soon",
+    "tags": [
+      "AI",
+      "Directory"
+    ],
+    "url": "#"
   },
   {
-    "name": "Global Talent Network",
-    "emoji": "🌍",
-    "description": "Connect with vetted freelance and remote tech talent.",
-    "tags": ["Talent", "Community"],
-    "url": "https://example.com/talent-network",
-    "featured": true
+    "emoji": "\ud83d\udcbc",
+    "name": "Freelance Tech Talent",
+    "description": "Find top-rated African freelancers.",
+    "status": "coming_soon",
+    "tags": [
+      "Freelance",
+      "Talent"
+    ],
+    "url": "#"
   },
   {
-    "name": "Tech Events Calendar",
-    "emoji": "📆",
-    "description": "Stay updated on top tech events, webinars, and summits.",
-    "tags": ["Events", "Startups"],
-    "url": "https://example.com/tech-events",
-    "featured": false
+    "emoji": "\ud83d\udcda",
+    "name": "Certification Prep",
+    "description": "Resources for SAT, IELTS, and more.",
+    "status": "coming_soon",
+    "tags": [
+      "Education"
+    ],
+    "url": "#"
   }
 ]

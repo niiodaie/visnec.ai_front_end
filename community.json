@@ -1,33 +1,35 @@
 [
   {
-    "emoji": "\ud83d\udcac",
+    "emoji": "💬",
     "name": "Nexus Pulse",
-    "description": "Reddit-style creative discussions.",
+    "description": "A Reddit-style discussion space for creators and builders.",
     "status": "coming_soon",
     "tags": [
       "Forum",
+      "Ideas",
+      "Engagement"
+    ],
+    "url": "#"
+  },
+  {
+    "emoji": "🤝",
+    "name": "Mentorship Circles",
+    "description": "Peer-led mentorship rooms and learning hubs.",
+    "status": "coming_soon",
+    "tags": [
+      "Mentorship",
       "Community"
     ],
     "url": "#"
   },
   {
-    "emoji": "\ud83e\udde0",
-    "name": "AI Mentorship Forums",
-    "description": "Engage with fellow builders and creators.",
+    "emoji": "📢",
+    "name": "Announcements Board",
+    "description": "Stay up to date with platform updates and news.",
     "status": "coming_soon",
     "tags": [
-      "Mentorship",
-      "Support"
-    ],
-    "url": "#"
-  },
-  {
-    "emoji": "\ud83c\udfaf",
-    "name": "Tool Requests",
-    "description": "Suggest what we build next.",
-    "status": "coming_soon",
-    "tags": [
-      "Feedback"
+      "Updates",
+      "Community"
     ],
     "url": "#"
   }

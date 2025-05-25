@@ -2,35 +2,100 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Platforms – Visnec Nexus</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>VNX Platforms</title>
+  <link rel="stylesheet" href="main.css" />
+  <style>
+    .filter-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+      justify-content: center;
+    }
+    .filter-btn {
+      background: #eee;
+      border: none;
+      padding: 0.4rem 0.9rem;
+      border-radius: 20px;
+      cursor: pointer;
+      font-weight: 500;
+    }
+    .filter-btn.active {
+      background: #3b82f6;
+      color: white;
+    }
+    .platform {
+      display: none;
+    }
+    .platform.show {
+      display: block;
+    }
+  </style>
 </head>
-<body class="bg-gray-50 text-gray-800 min-h-screen flex flex-col">
-  <header class="bg-white shadow p-4 flex justify-between items-center">
-    <a href="index.html" class="text-xl font-bold text-blue-600 hover:underline">← Back to Home</a>
-    <span class="text-sm font-semibold">Platforms</span>
-  </header>
+<body>
+  <p><a href="index.html">← Back to Home</a></p>
+  <h1>🚀 VNX Platforms</h1>
 
-  <main class="text-center py-16 px-4">
-    <h1 class="text-3xl font-bold mb-4">Platforms</h1>
-    <p class="text-gray-600">Explore our smart platforms</p>
-  </main>
+  <div class="filter-bar" id="filterBar"></div>
+  <div class="grid" id="platformList"></div>
 
-  <footer class="text-center text-sm text-gray-500 p-4 border-t mt-auto">
-    © 2025 <a href="https://visnec.com" class="text-blue-500 hover:underline">Visnec Global</a> ·
-    <a href="mailto:info@visnec.ai" class="text-blue-500 hover:underline">info@visnec.ai</a>
-  </footer>
+  <script>
+    fetch('platforms.json')
+      .then(res => res.json())
+      .then(platforms => {
+        const tags = new Set();
+        platforms.forEach(p => p.tags.forEach(tag => tags.add(tag)));
 
-  <footer style="margin-top: 4rem; text-align: center; font-size: 0.9rem; color: #666;">
-    <hr style="margin: 2rem auto; width: 60%;" />
-    <p>© 2025 Visnec Nexus (VNX) · <a href="mailto:info@visnec.ai">info@visnec.ai</a></p>
-    <p>
-      <a href="/privacy.html">Privacy Policy</a> · 
-      <a href="/terms.html">Terms of Use</a> · 
-      <a href="/help-ios.html">📱 iOS Help</a> · 
-      <a href="/help-android.html">🤖 Android Help</a>
-    </p>
-  </footer>
+        const filterBar = document.getElementById('filterBar');
+        const platformList = document.getElementById('platformList');
+
+        // Render tag buttons
+        const allBtn = document.createElement('button');
+        allBtn.textContent = 'All';
+        allBtn.className = 'filter-btn active';
+        allBtn.onclick = () => {
+          document.querySelectorAll('.platform').forEach(div => div.classList.add('show'));
+          document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+          allBtn.classList.add('active');
+        };
+        filterBar.appendChild(allBtn);
+
+        tags.forEach(tag => {
+          const btn = document.createElement('button');
+          btn.textContent = tag;
+          btn.className = 'filter-btn';
+          btn.onclick = () => {
+            document.querySelectorAll('.platform').forEach(div => {
+              const matches = div.dataset.tags.includes(tag);
+              div.classList.toggle('show', matches);
+            });
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+          };
+          filterBar.appendChild(btn);
+        });
+
+        // Render platforms
+        platforms.forEach(platform => {
+          const div = document.createElement('div');
+          div.className = 'platform show';
+          div.dataset.tags = platform.tags.join(',');
+
+          div.innerHTML = `
+            <h2>${platform.emoji} ${platform.name}</h2>
+            <p>${platform.description}</p>
+            <p><strong>Status:</strong> <span class="${platform.status === 'live' ? 'featured' : 'coming'}">${platform.status}</span></p>
+            <div class="tags">${platform.tags.map(tag => `<span class="badge">${tag}</span>`).join(' ')}</div>
+            <p><a href="${platform.url}" target="_blank">Visit Platform</a></p>
+          `;
+          platformList.appendChild(div);
+        });
+      })
+      .catch(err => {
+        document.getElementById('platformList').innerHTML = '<p style="color:red;">⚠️ Failed to load platforms.</p>';
+        console.error(err);
+      });
+  </script>
 </body>
 </html>

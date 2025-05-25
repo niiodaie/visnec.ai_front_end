@@ -1,44 +1,56 @@
 
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background: url('clouds.png') no-repeat center center fixed;
-    background-size: cover;
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: url('../img/clouds.png') no-repeat center center fixed;
+  background-size: cover;
+  color: #222;
 }
-.header {
-    background-color: #1f3bb3;
-    padding: 1em;
-    color: white;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+header {
+  background-color: #1f3fbf;
+  color: white;
+  padding: 1em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-.nav-links {
-    list-style: none;
-    display: flex;
-    gap: 1em;
+header .logo-title {
+  display: flex;
+  align-items: center;
 }
-.nav-links a {
-    color: white;
-    text-decoration: none;
+header .logo-title img {
+  height: 40px;
+  margin-right: 10px;
+}
+nav a {
+  color: white;
+  margin-left: 15px;
+  text-decoration: none;
+  font-weight: bold;
 }
 .hero {
-    text-align: center;
-    padding: 4em 1em;
-    background-color: rgba(255, 255, 255, 0.8);
-    margin: 2em;
-    border-radius: 8px;
+  text-align: center;
+  margin: 2em;
+}
+.pillars {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 2em;
+}
+.pillar {
+  flex: 1 0 200px;
+  margin: 1em;
+  padding: 1em;
+  background-color: rgba(255,255,255,0.8);
+  border-radius: 10px;
 }
 footer {
-    text-align: center;
-    padding: 2em 1em;
-    background-color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  padding: 1em;
+  background: #f5f5f5;
 }
-.social-icons img {
-    width: 24px;
-    margin: 0 0.5em;
-}
-.logo {
-    height: 40px;
+footer .social img {
+  width: 24px;
+  margin: 0 5px;
 }

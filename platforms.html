@@ -1,101 +1,104 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>VNX Platforms</title>
-  <link rel="stylesheet" href="main.css" />
+  <link rel="stylesheet" href="/main.css" />
   <style>
-    .filter-bar {
+    .tag-filter {
+      margin: 1rem 0;
       display: flex;
       flex-wrap: wrap;
       gap: 0.5rem;
-      margin-bottom: 1.5rem;
       justify-content: center;
     }
-    .filter-btn {
-      background: #eee;
+    .tag-button {
+      padding: 0.4rem 0.8rem;
       border: none;
-      padding: 0.4rem 0.9rem;
       border-radius: 20px;
+      background-color: #eee;
       cursor: pointer;
-      font-weight: 500;
+      font-size: 0.9rem;
     }
-    .filter-btn.active {
-      background: #3b82f6;
+    .tag-button.active {
+      background-color: #0070f3;
       color: white;
     }
-    .platform {
-      display: none;
+    footer {
+      margin-top: 3rem;
+      font-size: 0.85rem;
+      color: #888;
+      text-align: center;
     }
-    .platform.show {
-      display: block;
+    footer a {
+      color: #0070f3;
+      text-decoration: none;
     }
   </style>
 </head>
 <body>
-  <p><a href="index.html">← Back to Home</a></p>
-  <h1>🚀 VNX Platforms</h1>
+  <a href="/" style="display: block; text-align: center; margin-top: 1rem; font-weight: bold; color: #0070f3;">← Back to Home</a>
+  <h1 style="text-align:center;">🚀 VNX Platforms</h1>
+  <p style="text-align:center;">Explore our smart platforms</p>
 
-  <div class="filter-bar" id="filterBar"></div>
+  <div class="tag-filter" id="tagFilters"></div>
   <div class="grid" id="platformList"></div>
 
+  <footer>
+    <p>© 2025 <a href="https://visnec.ai">Visnec Nexus</a> · <a href="mailto:info@visnec.ai">info@visnec.ai</a></p>
+  </footer>
+
   <script>
-    fetch('platforms.json')
-      .then(res => res.json())
-      .then(platforms => {
-        const tags = new Set();
-        platforms.forEach(p => p.tags.forEach(tag => tags.add(tag)));
+    async function loadPlatforms() {
+      const res = await fetch('/platforms.json');
+      const data = await res.json();
 
-        const filterBar = document.getElementById('filterBar');
-        const platformList = document.getElementById('platformList');
+      const platformList = document.getElementById('platformList');
+      const tagFilters = document.getElementById('tagFilters');
 
-        // Render tag buttons
-        const allBtn = document.createElement('button');
-        allBtn.textContent = 'All';
-        allBtn.className = 'filter-btn active';
-        allBtn.onclick = () => {
-          document.querySelectorAll('.platform').forEach(div => div.classList.add('show'));
-          document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-          allBtn.classList.add('active');
+      const tags = new Set();
+      data.forEach(p => p.tags?.forEach(tag => tags.add(tag)));
+      const sortedTags = ['All', ...Array.from(tags).sort()];
+
+      sortedTags.forEach(tag => {
+        const btn = document.createElement('button');
+        btn.className = 'tag-button';
+        btn.textContent = tag;
+        if (tag === 'All') btn.classList.add('active');
+        btn.onclick = () => {
+          document.querySelectorAll('.tag-button').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          renderPlatforms(tag);
         };
-        filterBar.appendChild(allBtn);
+        tagFilters.appendChild(btn);
+      });
 
-        tags.forEach(tag => {
-          const btn = document.createElement('button');
-          btn.textContent = tag;
-          btn.className = 'filter-btn';
-          btn.onclick = () => {
-            document.querySelectorAll('.platform').forEach(div => {
-              const matches = div.dataset.tags.includes(tag);
-              div.classList.toggle('show', matches);
-            });
-            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-          };
-          filterBar.appendChild(btn);
-        });
-
-        // Render platforms
-        platforms.forEach(platform => {
+      function renderPlatforms(activeTag) {
+        platformList.innerHTML = '';
+        data.forEach(p => {
+          if (activeTag !== 'All' && !(p.tags || []).includes(activeTag)) return;
           const div = document.createElement('div');
-          div.className = 'platform show';
-          div.dataset.tags = platform.tags.join(',');
-
+          div.className = 'tool';
           div.innerHTML = `
-            <h2>${platform.emoji} ${platform.name}</h2>
-            <p>${platform.description}</p>
-            <p><strong>Status:</strong> <span class="${platform.status === 'live' ? 'featured' : 'coming'}">${platform.status}</span></p>
-            <div class="tags">${platform.tags.map(tag => `<span class="badge">${tag}</span>`).join(' ')}</div>
-            <p><a href="${platform.url}" target="_blank">Visit Platform</a></p>
+            <h3>${p.emoji} ${p.name}</h3>
+            <p>${p.description}</p>
+            <p><strong>Status:</strong> <span class="${p.status === 'live' ? 'featured' : 'coming'}">${p.status}</span></p>
+            <div class="tags">${(p.tags || []).map(tag => `<span class="badge">${tag}</span>`).join(' ')}</div>
+            <a href="${p.url}" target="_blank">Visit Platform</a>
           `;
           platformList.appendChild(div);
         });
-      })
-      .catch(err => {
-        document.getElementById('platformList').innerHTML = '<p style="color:red;">⚠️ Failed to load platforms.</p>';
-        console.error(err);
-      });
+      }
+
+      renderPlatforms('All');
+    }
+
+    loadPlatforms().catch(err => {
+      document.getElementById('platformList').innerHTML = '<p style="color:red;">⚠️ Failed to load platforms.</p>';
+      console.error(err);
+    });
   </script>
 </body>
 </html>

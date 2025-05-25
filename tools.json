@@ -1,90 +1,28 @@
-[
-  {
-    "emoji": "\ud83c\udf81",
-    "name": "Surprise Ideas Generator",
-    "description": "Get fun, creative ideas for any event. Powered by AI.",
-    "status": "live",
-    "tags": [
-      "Creative",
-      "AI"
-    ],
-    "url": "https://surprise.visnec.ai"
-  },
-  {
-    "emoji": "\u2699\ufe0f",
-    "name": "Productivity Bot",
-    "description": "Boost your daily workflow with this smart assistant.",
-    "status": "coming_soon",
-    "tags": [
-      "Productivity",
-      "AI"
-    ],
-    "url": "#"
-  },
-  {
-    "emoji": "\ud83d\udee1\ufe0f",
-    "name": "ScamScanner",
-    "description": "Detect scams and malicious spyware using AI.",
-    "status": "coming_soon",
-    "tags": [
-      "Security",
-      "AI"
-    ],
-    "url": "#"
-  },
-  {
-    "emoji": "\ud83c\udf10",
-    "name": "NetLookup",
-    "description": "Check domain, IP, and DNS records instantly.",
-    "status": "coming_soon",
-    "tags": [
-      "Network",
-      "Tools"
-    ],
-    "url": "#"
-  },
-  {
-    "emoji": "\ud83d\udcf1",
-    "name": "Phone & IP Lookup",
-    "description": "Lookup public details of any phone number or IP.",
-    "status": "coming_soon",
-    "tags": [
-      "Utility"
-    ],
-    "url": "#"
-  },
-  {
-    "emoji": "\ud83d\udcf6",
-    "name": "InternetSpeed.io",
-    "description": "Test your internet speed and compare ISPs.",
-    "status": "coming_soon",
-    "tags": [
-      "Speed",
-      "Network"
-    ],
-    "url": "#"
-  },
-  {
-    "emoji": "\ud83e\uddea",
-    "name": "Brythylzer",
-    "description": "AI-powered brainstorming and synthesis tool.",
-    "status": "coming_soon",
-    "tags": [
-      "AI",
-      "Ideas"
-    ],
-    "url": "#"
-  },
-  {
-    "emoji": "\ud83d\udcbb",
-    "name": "AnyCommand",
-    "description": "Get explanations for any IT or terminal command.",
-    "status": "coming_soon",
-    "tags": [
-      "IT",
-      "Utility"
-    ],
-    "url": "#"
-  }
-]
-h
+ <script>
+  fetch('/tools.json')
+    .then(res => {
+      if (!res.ok) throw new Error('Failed to fetch');
+      return res.json();
+    })
+    .then(tools => {
+      const list = document.getElementById('toolList');
+      tools.forEach(tool => {
+        const div = document.createElement('div');
+        div.className = 'tool';
+        div.innerHTML = `
+          <h3>${tool.emoji} ${tool.name}</h3>
+          <p>${tool.description}</p>
+          <p><strong>Status:</strong> 
+            <span class="${tool.status === 'live' ? 'featured' : 'coming'}">${tool.status}</span></p>
+          <div class="tags">${tool.tags.map(tag => `<span class="badge">${tag}</span>`).join(' ')}</div>
+          <a href="${tool.url}" target="_blank">Visit Tool</a>
+        `;
+        list.appendChild(div);
+      });
+    })
+    .catch(error => {
+      document.getElementById('toolList').innerHTML =
+        `<p style="color: red;">⚠️ Failed to load tools.</p>`;
+      console.error('Error loading tools:', error);
+    });
+</script>

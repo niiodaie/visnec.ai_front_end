@@ -1,0 +1,56 @@
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: url('../img/clouds.png') no-repeat center center fixed;
+  background-size: cover;
+  color: #222;
+}
+header {
+  background-color: #1f3fbf;
+  color: white;
+  padding: 1em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header .logo-title {
+  display: flex;
+  align-items: center;
+}
+header .logo-title img {
+  height: 40px;
+  margin-right: 10px;
+}
+nav a {
+  color: white;
+  margin-left: 15px;
+  text-decoration: none;
+  font-weight: bold;
+}
+.hero {
+  text-align: center;
+  margin: 2em;
+}
+.pillars {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 2em;
+}
+.pillar {
+  flex: 1 0 200px;
+  margin: 1em;
+  padding: 1em;
+  background-color: rgba(255,255,255,0.8);
+  border-radius: 10px;
+}
+footer {
+  text-align: center;
+  padding: 1em;
+  background: #f5f5f5;
+}
+footer .social img {
+  width: 24px;
+  margin: 0 5px;
+}

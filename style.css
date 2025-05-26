@@ -1,8 +1,4 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #fff;
@@ -25,15 +21,11 @@ header h1 {
   font-size: 2rem;
   vertical-align: middle;
 }
-main {
-  padding: 2rem;
-}
-h2 {
+main h2 {
   font-size: 1.8rem;
   margin: 1.5rem 0 0.5rem;
-  color: #111;
 }
-p {
+main p {
   font-size: 1.1rem;
   color: #444;
   margin-bottom: 2rem;
@@ -57,9 +49,4 @@ a {
 a:hover {
   color: #0056ff;
   text-decoration: underline;
-}
-@media (max-width: 600px) {
-  header h1 { font-size: 1.5rem; }
-  h2 { font-size: 1.5rem; }
-  a { font-size: 1rem; }
 }

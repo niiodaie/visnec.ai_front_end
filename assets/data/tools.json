@@ -1,0 +1,89 @@
+[
+  {
+    "emoji": "🎁",
+    "name": "Surprise Ideas Generator",
+    "description": "Get fun, creative ideas for any event. Powered by AI.",
+    "status": "live",
+    "tags": [
+      "Creative",
+      "AI"
+    ],
+    "url": "https://surprise.visnec.ai"
+  },
+  {
+    "emoji": "⚙️",
+    "name": "Productivity Bot",
+    "description": "Boost your daily workflow with this smart assistant.",
+    "status": "coming_soon",
+    "tags": [
+      "Productivity",
+      "AI"
+    ],
+    "url": "#"
+  },
+  {
+    "emoji": "🛡️",
+    "name": "ScamScanner",
+    "description": "Detect scams and malicious spyware using AI.",
+    "status": "coming_soon",
+    "tags": [
+      "Security",
+      "AI"
+    ],
+    "url": "#"
+  },
+  {
+    "emoji": "🌐",
+    "name": "NetLookup",
+    "description": "Check domain, IP, and DNS records instantly.",
+    "status": "coming_soon",
+    "tags": [
+      "Network",
+      "Tools"
+    ],
+    "url": "#"
+  },
+  {
+    "emoji": "📱",
+    "name": "Phone & IP Lookup",
+    "description": "Lookup public details of any phone number or IP.",
+    "status": "coming_soon",
+    "tags": [
+      "Utility"
+    ],
+    "url": "#"
+  },
+  {
+    "emoji": "📶",
+    "name": "InternetSpeed.io",
+    "description": "Test your internet speed and compare ISPs.",
+    "status": "coming_soon",
+    "tags": [
+      "Speed",
+      "Network"
+    ],
+    "url": "#"
+  },
+  {
+    "emoji": "🧪",
+    "name": "Brythylzer",
+    "description": "AI-powered brainstorming and synthesis tool.",
+    "status": "coming_soon",
+    "tags": [
+      "AI",
+      "Ideas"
+    ],
+    "url": "#"
+  },
+  {
+    "emoji": "💻",
+    "name": "AnyCommand",
+    "description": "Get explanations for any IT or terminal command.",
+    "status": "coming_soon",
+    "tags": [
+      "IT",
+      "Utility"
+    ],
+    "url": "#"
+  }
+]

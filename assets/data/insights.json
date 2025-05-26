@@ -1,0 +1,38 @@
+[
+  {
+    "emoji": "📊",
+    "name": "2025 AI Trends",
+    "description": "What’s shaping the future of artificial intelligence?",
+    "status": "coming_soon",
+    "tags": [
+      "AI",
+      "Trends",
+      "Tech"
+    ],
+    "url": "#"
+  },
+  {
+    "emoji": "📈",
+    "name": "E-commerce Deep Dive",
+    "description": "Data-driven insights on online retail growth.",
+    "status": "coming_soon",
+    "tags": [
+      "Business",
+      "Data",
+      "Growth"
+    ],
+    "url": "#"
+  },
+  {
+    "emoji": "🎙️",
+    "name": "Creator Economy Report",
+    "description": "How creators are monetizing across platforms.",
+    "status": "coming_soon",
+    "tags": [
+      "Creators",
+      "Monetization",
+      "Platforms"
+    ],
+    "url": "#"
+  }
+]

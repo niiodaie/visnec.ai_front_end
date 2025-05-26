@@ -7,20 +7,21 @@
   <style>
     body { font-family: Arial, sans-serif; background: #eaf0fa; margin: 0; padding: 0; color: #333; }
     header { background: #264de4; color: white; text-align: center; padding: 20px 10px; }
-    header img { height: 40px; vertical-align: middle; margin-right: 10px; }
-    header h1 { display: inline; font-size: 24px; }
     .container { max-width: 1000px; margin: 20px auto; padding: 0 15px; }
     .filters { margin: 20px 0; display: flex; flex-wrap: wrap; gap: 10px; }
     .filters button { background: #f0f0f0; border: none; padding: 8px 12px; border-radius: 20px; cursor: pointer; }
     .filters button.active { background: #264de4; color: white; }
     .tool-card { background: white; border-radius: 12px; padding: 15px; margin-bottom: 15px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
     .tool-card h3 { margin: 0 0 10px; }
-    .tool-card .status-live { color: green; font-weight: bold; }
-    .tool-card .status-coming { color: orange; font-weight: bold; }
+    .status-live { color: green; font-weight: bold; }
+    .status-coming { color: orange; font-weight: bold; }
     .tags { margin-top: 10px; }
     .tag { display: inline-block; background: #dce1ec; border-radius: 5px; padding: 2px 8px; font-size: 12px; margin-right: 5px; }
     a { color: #264de4; text-decoration: none; font-weight: bold; }
-    .back-link { display: block; margin-top: 10px; }
+    footer { background: #1c1c1c; color: #fff; text-align: center; padding: 20px 10px; margin-top: 40px; }
+    .footer-links a { color: #90caf9; margin: 0 10px; text-decoration: none; }
+    .social-icons { margin-top: 10px; }
+    .social-icons a { margin: 0 8px; text-decoration: none; color: #90caf9; }
   </style>
 </head>
 <body>
@@ -29,7 +30,7 @@
     <p>Explore. Create. Succeed.</p>
   </header>
   <div class="container">
-    <a class="back-link" href="index.html">&larr; Back to Home</a>
+    <a href="index.html">&larr; Back to Home</a>
     <h2>🚀 VNX Tools</h2>
     <div class="filters">
       <button class="active">All</button>
@@ -46,24 +47,10 @@
     </div>
 
     <div class="tool-card">
-      <h3>🎁 Surprise Ideas Generator</h3>
-      <p>Get fun, creative ideas for any event. Powered by AI.</p>
-      <p class="status-live">Status: live</p>
-      <div class="tags">
-        <span class="tag">Creative</span>
-        <span class="tag">AI</span>
-      </div>
-      <a href="#">Visit Platform</a>
-    </div>
-
-    <div class="tool-card">
-      <h3>⚙️ Productivity Bot</h3>
-      <p>Boost your daily workflow with this smart assistant.</p>
+      <h3>📶 InternetSpeed.io</h3>
+      <p>Test your internet speed and compare ISPs.</p>
       <p class="status-coming">Status: coming_soon</p>
-      <div class="tags">
-        <span class="tag">Productivity</span>
-        <span class="tag">AI</span>
-      </div>
+      <div class="tags"><span class="tag">Speed</span><span class="tag">Network</span></div>
       <a href="#">Visit Platform</a>
     </div>
 
@@ -71,21 +58,15 @@
       <h3>🛡 ScamScanner</h3>
       <p>Detect scams and malicious spyware using AI.</p>
       <p class="status-coming">Status: coming_soon</p>
-      <div class="tags">
-        <span class="tag">Security</span>
-        <span class="tag">AI</span>
-      </div>
+      <div class="tags"><span class="tag">Security</span><span class="tag">AI</span></div>
       <a href="#">Visit Platform</a>
     </div>
 
     <div class="tool-card">
-      <h3>🌐 NetLookup</h3>
-      <p>Check domain, IP, and DNS records instantly.</p>
+      <h3>⚙️ Productivity Bot</h3>
+      <p>Boost your daily workflow with this smart assistant.</p>
       <p class="status-coming">Status: coming_soon</p>
-      <div class="tags">
-        <span class="tag">Network</span>
-        <span class="tag">Tools</span>
-      </div>
+      <div class="tags"><span class="tag">Productivity</span><span class="tag">AI</span></div>
       <a href="#">Visit Platform</a>
     </div>
 
@@ -93,22 +74,40 @@
       <h3>📱 Phone & IP Lookup</h3>
       <p>Lookup public details of any phone number or IP.</p>
       <p class="status-coming">Status: coming_soon</p>
-      <div class="tags">
-        <span class="tag">Utility</span>
-      </div>
+      <div class="tags"><span class="tag">Utility</span></div>
       <a href="#">Visit Platform</a>
     </div>
 
     <div class="tool-card">
-      <h3>📶 InternetSpeed.io</h3>
-      <p>Test your internet speed and compare ISPs.</p>
+      <h3>🌐 NetLookup</h3>
+      <p>Check domain, IP, and DNS records instantly.</p>
       <p class="status-coming">Status: coming_soon</p>
-      <div class="tags">
-        <span class="tag">Speed</span>
-        <span class="tag">Network</span>
-      </div>
+      <div class="tags"><span class="tag">Network</span><span class="tag">Tools</span></div>
+      <a href="#">Visit Platform</a>
+    </div>
+
+    <div class="tool-card">
+      <h3>🎁 Surprise Ideas Generator</h3>
+      <p>Get fun, creative ideas for any event. Powered by AI.</p>
+      <p class="status-live">Status: live</p>
+      <div class="tags"><span class="tag">Creative</span><span class="tag">AI</span></div>
       <a href="#">Visit Platform</a>
     </div>
   </div>
+
+  <footer>
+    <div class="footer-links">
+      <a href="#">About</a> |
+      <a href="#">Terms of Use</a> |
+      <a href="#">Privacy Policy</a>
+    </div>
+    <div class="social-icons">
+      <a href="https://twitter.com/vnxplatform" target="_blank">Twitter</a>
+      <a href="https://linkedin.com/company/vnx" target="_blank">LinkedIn</a>
+      <a href="https://instagram.com/vnxplatform" target="_blank">Instagram</a>
+      <a href="mailto:support@vnx.ai">Email</a>
+    </div>
+    <p>&copy; 2025 VNX Platform. All rights reserved.</p>
+  </footer>
 </body>
 </html>

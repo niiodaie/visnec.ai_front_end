@@ -1,68 +1,26 @@
-/* Reset & Base */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #fff;
-  color: #111;
+  font-family: Arial, sans-serif;
   text-align: center;
-  line-height: 1.6;
+  background-color: #fff;
+  color: #333;
 }
-
 header {
   background-color: #1a2eb3;
+  padding: 20px;
   color: white;
-  padding: 2rem 1rem;
 }
-
-header img {
-  height: 30px;
-  vertical-align: middle;
-  margin-right: 10px;
-}
-
-header h1 {
-  display: inline-block;
-  font-size: 2rem;
-  vertical-align: middle;
-}
-
-h2 {
-  font-size: 1.8rem;
-  margin: 1.5rem 0 0.5rem;
-  color: #111;
-}
-
-p {
-  font-size: 1.1rem;
-  color: #444;
-  margin-bottom: 2rem;
-}
-
 ul {
   list-style: none;
   padding: 0;
-  margin: 0 auto;
-  max-width: 400px;
 }
-
-ul li {
-  margin: 0.75rem 0;
+li {
+  margin: 10px 0;
 }
-
 a {
   color: #1a2eb3;
   text-decoration: none;
-  font-weight: 600;
-  font-size: 1.1rem;
-  transition: color 0.3s;
+  font-weight: bold;
 }
-
 a:hover {
   color: #0056ff;
-  text-decoration: underline;
 }

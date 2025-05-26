@@ -1,26 +1,74 @@
+
 body {
-  font-family: Arial, sans-serif;
-  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #fff;
-  color: #333;
+  color: #111;
+  text-align: center;
+  line-height: 1.6;
 }
 header {
   background-color: #1a2eb3;
-  padding: 20px;
   color: white;
+  padding: 1.5rem 1rem;
+}
+header img {
+  height: 30px;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+header h1 {
+  display: inline-block;
+  font-size: 2rem;
+  vertical-align: middle;
+}
+h2 {
+  font-size: 1.8rem;
+  margin: 1.5rem 0 0.5rem;
+  color: #111;
 }
 ul {
   list-style: none;
   padding: 0;
+  margin: 0 auto;
+  max-width: 400px;
 }
-li {
-  margin: 10px 0;
+ul li {
+  margin: 0.75rem 0;
 }
 a {
   color: #1a2eb3;
   text-decoration: none;
-  font-weight: bold;
+  font-weight: 600;
+  font-size: 1.1rem;
 }
 a:hover {
   color: #0056ff;
+  text-decoration: underline;
+}
+footer {
+  text-align: center;
+  padding: 2rem;
+  font-size: 0.9rem;
+  color: #444;
+}
+footer a {
+  color: #1a2eb3;
+  text-decoration: none;
+  margin: 0 5px;
+}
+footer a:hover {
+  text-decoration: underline;
+}
+.social-icons {
+  margin: 1rem 0;
+}
+.social-icons a img {
+  width: 28px;
+  height: 28px;
+  margin: 0 8px;
+  vertical-align: middle;
+  transition: transform 0.3s ease;
+}
+.social-icons a:hover img {
+  transform: scale(1.15);
 }

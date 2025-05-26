@@ -1,121 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>VNX Tools</title>
   <style>
-    body { font-family: Arial, sans-serif; background: #eaf0fa; margin: 0; padding: 0; color: #333; }
-    header { background: #264de4; color: white; text-align: center; padding: 20px 10px; }
-    .container { max-width: 1000px; margin: 20px auto; padding: 0 15px; }
-    .filters { margin: 20px 0; display: flex; flex-wrap: wrap; gap: 10px; }
-    .filters button { background: #f0f0f0; border: none; padding: 8px 12px; border-radius: 20px; cursor: pointer; }
-    .filters button.active { background: #264de4; color: white; }
-    .tool-card { background: white; border-radius: 12px; padding: 15px; margin-bottom: 15px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-    .tool-card h3 { margin: 0 0 10px; }
+    body { font-family: sans-serif; background: #f4f4f4; padding: 2rem; }
+    .tool-card { background: #fff; margin-bottom: 1rem; padding: 1rem; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); }
+    .tool-card h2 { margin-top: 0; }
+    .badge { display: inline-block; background: #eee; color: #333; padding: 0.2rem 0.5rem; border-radius: 4px; margin-right: 0.3rem; font-size: 0.8rem; }
     .status-live { color: green; font-weight: bold; }
-    .status-coming { color: orange; font-weight: bold; }
-    .tags { margin-top: 10px; }
-    .tag { display: inline-block; background: #dce1ec; border-radius: 5px; padding: 2px 8px; font-size: 12px; margin-right: 5px; }
-    a { color: #264de4; text-decoration: none; font-weight: bold; }
-    footer { background: #1c1c1c; color: #fff; text-align: center; padding: 20px 10px; margin-top: 40px; }
-    .footer-links a { color: #90caf9; margin: 0 10px; text-decoration: none; }
-    .social-icons { margin-top: 10px; }
-    .social-icons a { margin: 0 8px; text-decoration: none; color: #90caf9; }
+    .status-coming_soon { color: orange; font-weight: bold; }
   </style>
 </head>
 <body>
-  <header>
-    <div style="position: relative;">
-      <div style="position: absolute; left: 15px; top: 10px;">
-        <a href="#" style="color: white; font-size: 12px; text-decoration: none;">📱 iOS Help</a>
-      </div>
-      <div style="position: absolute; right: 15px; top: 10px;">
-        <a href="#" style="color: white; font-size: 12px; text-decoration: none;">🤖 Android Help</a>
-      </div>
-    </div>
-    <h1>🧰 VNX Tools</h1>
-    <p>Explore. Create. Succeed.</p><p style='font-size: 14px;'>Access helpful guides for using all VNX tools across platforms.</p>
-  </header>
-  <div class="container">
-    <a href="index.html">&larr; Back to Home</a>
-    <h2>🚀 VNX Tools</h2>
-    <div class="filters">
-      <button class="active">All</button>
-      <button>AI</button>
-      <button>Creative</button>
-      <button>IT</button>
-      <button>Ideas</button>
-      <button>Network</button>
-      <button>Productivity</button>
-      <button>Security</button>
-      <button>Speed</button>
-      <button>Tools</button>
-      <button>Utility</button>
-    </div>
+  <h1>🚀 VNX Tools</h1>
 
-    <div class="tool-card">
-      <h3>📶 InternetSpeed.io</h3>
-      <p>Test your internet speed and compare ISPs.</p>
-      <p class="status-coming">Status: coming_soon</p>
-      <div class="tags"><span class="tag">Speed</span><span class="tag">Network</span></div>
-      <a href="#">Visit Platform</a>
-    </div>
-
-    <div class="tool-card">
-      <h3>🛡 ScamScanner</h3>
-      <p>Detect scams and malicious spyware using AI.</p>
-      <p class="status-coming">Status: coming_soon</p>
-      <div class="tags"><span class="tag">Security</span><span class="tag">AI</span></div>
-      <a href="#">Visit Platform</a>
-    </div>
-
-    <div class="tool-card">
-      <h3>⚙️ Productivity Bot</h3>
-      <p>Boost your daily workflow with this smart assistant.</p>
-      <p class="status-coming">Status: coming_soon</p>
-      <div class="tags"><span class="tag">Productivity</span><span class="tag">AI</span></div>
-      <a href="#">Visit Platform</a>
-    </div>
-
-    <div class="tool-card">
-      <h3>📱 Phone & IP Lookup</h3>
-      <p>Lookup public details of any phone number or IP.</p>
-      <p class="status-coming">Status: coming_soon</p>
-      <div class="tags"><span class="tag">Utility</span></div>
-      <a href="#">Visit Platform</a>
-    </div>
-
-    <div class="tool-card">
-      <h3>🌐 NetLookup</h3>
-      <p>Check domain, IP, and DNS records instantly.</p>
-      <p class="status-coming">Status: coming_soon</p>
-      <div class="tags"><span class="tag">Network</span><span class="tag">Tools</span></div>
-      <a href="#">Visit Platform</a>
-    </div>
-
-    <div class="tool-card">
-      <h3>🎁 Surprise Ideas Generator</h3>
-      <p>Get fun, creative ideas for any event. Powered by AI.</p>
-      <p class="status-live">Status: live</p>
-      <div class="tags"><span class="tag">Creative</span><span class="tag">AI</span></div>
-      <a href="#">Visit Platform</a>
-    </div>
+  <div class="tool-card">
+    <h2>🎁 Surprise Ideas Generator</h2>
+    <p>Get fun, creative ideas for any event. Powered by AI.</p>
+    <p>Status: <span class="status-live">live</span></p>
+    <p><span class="badge">Creative</span> <span class="badge">AI</span></p>
+    <a href="https://surprise.visnec.ai" target="_blank">Visit Platform</a>
   </div>
-
-  <footer>
-    <div class="footer-links">
-      <a href="#">About</a> |
-      <a href="#">Terms of Use</a> |
-      <a href="#">Privacy Policy</a>
-    </div>
-    <div class="social-icons">
-      <a href="https://twitter.com/vnxplatform" target="_blank">Twitter</a>
-      <a href="https://linkedin.com/company/vnx" target="_blank">LinkedIn</a>
-      <a href="https://instagram.com/vnxplatform" target="_blank">Instagram</a>
-      <a href="mailto:support@vnx.ai">Email</a>
-    </div>
-    <p>&copy; 2025 VNX Platform. All rights reserved.</p>
-  </footer>
+  <div class="tool-card">
+    <h2>⚙️ Productivity Bot</h2>
+    <p>Boost your daily workflow with this smart assistant.</p>
+    <p>Status: <span class="status-coming_soon">coming soon</span></p>
+    <p><span class="badge">Productivity</span> <span class="badge">AI</span></p>
+    <a href="#" target="_blank">Visit Platform</a>
+  </div>
+  <div class="tool-card">
+    <h2>🛡️ ScamScanner</h2>
+    <p>Detect scams and malicious spyware using AI.</p>
+    <p>Status: <span class="status-coming_soon">coming soon</span></p>
+    <p><span class="badge">Security</span> <span class="badge">AI</span></p>
+    <a href="#" target="_blank">Visit Platform</a>
+  </div>
+  <div class="tool-card">
+    <h2>🌐 NetLookup</h2>
+    <p>Check domain, IP, and DNS records instantly.</p>
+    <p>Status: <span class="status-coming_soon">coming soon</span></p>
+    <p><span class="badge">Network</span> <span class="badge">Tools</span></p>
+    <a href="#" target="_blank">Visit Platform</a>
+  </div>
+  <div class="tool-card">
+    <h2>📱 Phone & IP Lookup</h2>
+    <p>Lookup public details of any phone number or IP.</p>
+    <p>Status: <span class="status-coming_soon">coming soon</span></p>
+    <p><span class="badge">Utility</span></p>
+    <a href="#" target="_blank">Visit Platform</a>
+  </div>
+  <div class="tool-card">
+    <h2>📶 InternetSpeed.io</h2>
+    <p>Test your internet speed and compare ISPs.</p>
+    <p>Status: <span class="status-coming_soon">coming soon</span></p>
+    <p><span class="badge">Speed</span> <span class="badge">Network</span></p>
+    <a href="#" target="_blank">Visit Platform</a>
+  </div>
+  <div class="tool-card">
+    <h2>🧪 Brythylzer</h2>
+    <p>AI-powered brainstorming and synthesis tool.</p>
+    <p>Status: <span class="status-coming_soon">coming soon</span></p>
+    <p><span class="badge">AI</span> <span class="badge">Ideas</span></p>
+    <a href="#" target="_blank">Visit Platform</a>
+  </div>
+  <div class="tool-card">
+    <h2>💻 AnyCommand</h2>
+    <p>Get explanations for any IT or terminal command.</p>
+    <p>Status: <span class="status-coming_soon">coming soon</span></p>
+    <p><span class="badge">IT</span> <span class="badge">Utility</span></p>
+    <a href="#" target="_blank">Visit Platform</a>
+  </div>
 </body>
 </html>

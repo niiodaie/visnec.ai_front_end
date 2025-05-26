@@ -6,36 +6,30 @@ body {
   text-align: center;
   line-height: 1.6;
 }
-
 header {
   background-color: #1a2eb3;
   color: white;
   padding: 2rem 1rem;
 }
-
 header img {
   height: 30px;
   vertical-align: middle;
   margin-right: 10px;
 }
-
 header h1 {
   display: inline-block;
   font-size: 2rem;
   vertical-align: middle;
 }
-
 ul {
   list-style: none;
   padding: 0;
   margin: 2rem auto;
   max-width: 400px;
 }
-
 ul li {
   margin: 0.75rem 0;
 }
-
 a {
   color: #1a2eb3;
   text-decoration: none;
@@ -43,7 +37,6 @@ a {
   font-size: 1.1rem;
   transition: color 0.3s;
 }
-
 a:hover {
   color: #0056ff;
   text-decoration: underline;

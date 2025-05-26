@@ -1,1 +1,5 @@
-/* Main VNX CSS */
+body { font-family: sans-serif; text-align: center; background: #fff; }
+header { background: #1a2eb3; color: white; padding: 1em; display: flex; align-items: center; justify-content: center; gap: 1em; }
+nav ul { list-style: none; padding: 0; }
+nav ul li { margin: 10px 0; }
+a { color: #1a2eb3; text-decoration: none; font-weight: bold; }

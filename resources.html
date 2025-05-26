@@ -3,146 +3,119 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>VNX</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-</head>
-<body class="bg-gradient-to-r from-blue-50 to-blue-100 text-gray-800">
-
-<header class="text-center py-10 bg-gradient-to-r from-blue-700 to-blue-800 text-white">
-  <div class="flex justify-center items-center space-x-4">
-    <img src="logo.png" alt="VNX Logo" class="h-10 w-auto" />
-    <h1 class="text-3xl font-bold">VNX</h1>
-  </div>
-  <p class="text-lg mt-2">Explore. Create. Succeed.</p>
-</header>
-
-
-<main class="max-w-6xl mx-auto p-6">
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>VNX Resources</title>
-  <link rel="stylesheet" href="/main.css" />
   <style>
-    .filters {
-      text-align: center;
-      margin-bottom: 1.5rem;
-    }
-    .filter-btn {
-      display: inline-block;
-      background: #eee;
-      border: none;
-      border-radius: 20px;
-      padding: 0.4rem 1rem;
-      margin: 0.2rem;
-      cursor: pointer;
-      font-size: 0.9rem;
-    }
-    .filter-btn.active {
-      background-color: #0070f3;
-      color: white;
-    }
+    body { font-family: Arial, sans-serif; background: #eaf0fa; margin: 0; padding: 0; color: #333; }
+    header { background: #264de4; color: white; text-align: center; padding: 20px 10px; }
+    .container { max-width: 1000px; margin: 20px auto; padding: 0 15px; }
+    .filters { margin: 20px 0; display: flex; flex-wrap: wrap; gap: 10px; }
+    .filters button { background: #f0f0f0; border: none; padding: 8px 12px; border-radius: 20px; cursor: pointer; }
+    .filters button.active { background: #264de4; color: white; }
+    .tool-card { background: white; border-radius: 12px; padding: 15px; margin-bottom: 15px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+    .tool-card h3 { margin: 0 0 10px; }
+    .status-live { color: green; font-weight: bold; }
+    .status-coming { color: orange; font-weight: bold; }
+    .tags { margin-top: 10px; }
+    .tag { display: inline-block; background: #dce1ec; border-radius: 5px; padding: 2px 8px; font-size: 12px; margin-right: 5px; }
+    a { color: #264de4; text-decoration: none; font-weight: bold; }
+    footer { background: #1c1c1c; color: #fff; text-align: center; padding: 20px 10px; margin-top: 40px; }
+    .footer-links a { color: #90caf9; margin: 0 10px; text-decoration: none; }
+    .social-icons { margin-top: 10px; }
+    .social-icons a { margin: 0 8px; text-decoration: none; color: #90caf9; }
   </style>
 </head>
 <body>
-  <a class="hover:text-white hover:drop-shadow-[0_0_8px_#3b82f6] transition-all duration-150" href="index.html" style="display:block;margin:1rem 0;">← Back to Home</a>
-  <h1 style="text-align:center;">🚀 VNX Resources</h1>
-  <div class="filters" id="tagFilters"></div>
-  <div class="grid" id="resourceList">
-    <p style="text-align:center;color:gray;">Loading resources...</p>
+  <header>
+    <div style="position: relative;">
+      <div style="position: absolute; left: 15px; top: 10px;">
+        <a href="#" style="color: white; font-size: 12px; text-decoration: none;">📱 iOS Help</a>
+      </div>
+      <div style="position: absolute; right: 15px; top: 10px;">
+        <a href="#" style="color: white; font-size: 12px; text-decoration: none;">🤖 Android Help</a>
+      </div>
+    </div>
+    <h1>📦 VNX</h1>
+    <p>Explore. Create. Succeed.</p><p style='font-size: 14px;'>Access helpful guides for using all VNX tools across platforms.</p>
+  </header>
+  <div class="container">
+    <a href="index.html">&larr; Back to Home</a>
+    <h2>🚀 VNX Resources</h2>
+    <div class="filters">
+      <button class="active">All</button>
+      <button>AI</button>
+      <button>Creative</button>
+      <button>IT</button>
+      <button>Ideas</button>
+      <button>Network</button>
+      <button>Productivity</button>
+      <button>Security</button>
+      <button>Speed</button>
+      <button>Tools</button>
+      <button>Utility</button>
+    </div>
+
+    <div class="tool-card">
+      <h3>📶 InternetSpeed.io</h3>
+      <p>Test your internet speed and compare ISPs.</p>
+      <p class="status-coming">Status: coming_soon</p>
+      <div class="tags"><span class="tag">Speed</span><span class="tag">Network</span></div>
+      <a href="#">Visit Platform</a>
+    </div>
+
+    <div class="tool-card">
+      <h3>🛡 ScamScanner</h3>
+      <p>Detect scams and malicious spyware using AI.</p>
+      <p class="status-coming">Status: coming_soon</p>
+      <div class="tags"><span class="tag">Security</span><span class="tag">AI</span></div>
+      <a href="#">Visit Platform</a>
+    </div>
+
+    <div class="tool-card">
+      <h3>⚙️ Productivity Bot</h3>
+      <p>Boost your daily workflow with this smart assistant.</p>
+      <p class="status-coming">Status: coming_soon</p>
+      <div class="tags"><span class="tag">Productivity</span><span class="tag">AI</span></div>
+      <a href="#">Visit Platform</a>
+    </div>
+
+    <div class="tool-card">
+      <h3>📱 Phone & IP Lookup</h3>
+      <p>Lookup public details of any phone number or IP.</p>
+      <p class="status-coming">Status: coming_soon</p>
+      <div class="tags"><span class="tag">Utility</span></div>
+      <a href="#">Visit Platform</a>
+    </div>
+
+    <div class="tool-card">
+      <h3>🌐 NetLookup</h3>
+      <p>Check domain, IP, and DNS records instantly.</p>
+      <p class="status-coming">Status: coming_soon</p>
+      <div class="tags"><span class="tag">Network</span><span class="tag">Tools</span></div>
+      <a href="#">Visit Platform</a>
+    </div>
+
+    <div class="tool-card">
+      <h3>🎁 Surprise Ideas Generator</h3>
+      <p>Get fun, creative ideas for any event. Powered by AI.</p>
+      <p class="status-live">Status: live</p>
+      <div class="tags"><span class="tag">Creative</span><span class="tag">AI</span></div>
+      <a href="#">Visit Platform</a>
+    </div>
   </div>
 
-  <script>
-    let allPlatforms = [];
-    let activeTag = '';
-
-    function renderPlatforms(resources) {
-      const list = document.getElementById('resourceList');
-      list.innerHTML = '';
-
-      if (resources.length === 0) {
-        list.innerHTML = '<p style="text-align:center;color:gray;">No resources match this tag.</p>';
-        return;
-      }
-
-      resources.forEach(item => {
-        const div = document.createElement('div');
-        div.className = 'tool';
-        div.innerHTML = `
-          <h3>${item.emoji} ${item.name}</h3>
-          <p>${item.description}</p>
-          <p><strong>Status:</strong> 
-            <span class="${item.status === 'live' ? 'featured' : 'coming'}">${item.status}</span></p>
-          <div class="tags">${(item.tags || []).map(tag => `<span class="badge">${tag}</span>`).join(' ')}</div>
-          <a class="hover:text-white hover:drop-shadow-[0_0_8px_#3b82f6] transition-all duration-150" href="${item.url}" target="_blank">Visit Platform</a>
-        `;
-        list.appendChild(div);
-      });
-    }
-
-    function renderFilters(tags) {
-      const container = document.getElementById('tagFilters');
-      container.innerHTML = '';
-
-      const allBtn = document.createElement('button');
-      allBtn.textContent = 'All';
-      allBtn.className = 'filter-btn' + (activeTag === '' ? ' active' : '');
-      allBtn.onclick = () => {
-        activeTag = '';
-        renderPlatforms(allPlatforms);
-        renderFilters(getAllTags(allPlatforms));
-      };
-      container.appendChild(allBtn);
-
-      tags.forEach(tag => {
-        const btn = document.createElement('button');
-        btn.textContent = tag;
-        btn.className = 'filter-btn' + (activeTag === tag ? ' active' : '');
-        btn.onclick = () => {
-          activeTag = tag;
-          renderPlatforms(allPlatforms.filter(t => (t.tags || []).includes(tag)));
-          renderFilters(tags);
-        };
-        container.appendChild(btn);
-      });
-    }
-
-    function getAllTags(items) {
-      const tagSet = new Set();
-      items.forEach(item => (item.tags || []).forEach(tag => tagSet.add(tag)));
-      return Array.from(tagSet).sort();
-    }
-
-    fetch('/resources.json')
-      .then(res => res.json())
-      .then(data => {
-        allPlatforms = data;
-        renderPlatforms(allPlatforms);
-        renderFilters(getAllTags(allPlatforms));
-      })
-      .catch(err => {
-        document.getElementById('resourceList').innerHTML =
-          `<p style="color:red;">⚠️ Failed to load resources.</p>`;
-        console.error(err);
-      });
-  </script>
-</main>
-
-
-<footer class="bg-white mt-16 py-10 border-t text-sm text-gray-600 text-center">
-  <p>
-    © 2025 <strong>VNX</strong> • Powered by
-    <a href="https://visnec.com" class="underline text-blue-600 hover:text-white hover:drop-shadow-[0_0_8px_#3b82f6]">Visnec Global</a> ·
-    <a href="mailto:info@vnx.ai" class="underline text-blue-600 hover:text-white hover:drop-shadow-[0_0_8px_#3b82f6]">info@vnx.ai</a>
-  </p>
-  <p class="mt-2">
-    📱 Help for:
-    <a href="help-ios.html" class="underline text-blue-600 hover:text-white hover:drop-shadow-[0_0_8px_#3b82f6]">iOS</a> ·
-    <a href="help-android.html" class="underline text-blue-600 hover:text-white hover:drop-shadow-[0_0_8px_#3b82f6]">Android</a>
-  </p>
-</footer>
-
+  <footer>
+    <div class="footer-links">
+      <a href="#">About</a> |
+      <a href="#">Terms of Use</a> |
+      <a href="#">Privacy Policy</a>
+    </div>
+    <div class="social-icons">
+      <a href="https://twitter.com/vnxplatform" target="_blank">Twitter</a>
+      <a href="https://linkedin.com/company/vnx" target="_blank">LinkedIn</a>
+      <a href="https://instagram.com/vnxplatform" target="_blank">Instagram</a>
+      <a href="mailto:support@vnx.ai">Email</a>
+    </div>
+    <p>&copy; 2025 VNX Platform. All rights reserved.</p>
+  </footer>
 </body>
 </html>
